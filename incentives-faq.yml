@@ -1,0 +1,106 @@
+### YamlMime:FAQ
+metadata:
+  title: Incentives user access and enrollment FAQ
+  ms.topic: faq
+  ms.date: 04/14/2023
+  description: Frequently asked questions for Microsoft incentives. This article includes questions about user roles, how to enroll, or what to do about error messages.
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-incentives
+  author: khakiali
+  ms.author: alikhaki
+
+title: Incentives user access and enrollment FAQ
+summary: |
+  **Appropriate roles**: Incentives admin | Incentives user
+
+
+sections:
+  - name: Ignored
+    questions:
+      - question: |
+          Do I need to be the Global admin to enroll in incentives?
+        answer: |
+          No. Both the Global admin and Account admin can assign users as Incentives admins. Incentives admins manage the company's incentives programs through Partner Center. For more information, see [Permissions overview](permissions-overview.md).
+
+      - question: |
+          What do I need to do if I find my company is already a member of the Microsoft AI Cloud Partner Program?
+        answer: |
+          If you try to join Microsoft AI Cloud Partner Program and your company is already a member, Microsoft AI Cloud Partner Program will recognize the domain and associate you with the existing account. The existing account may be the same company or a related company using the same email domain, or the same Azure Activity Directory (Azure AD) to manage multiple domains.
+
+          You can identify the Primary Contact from the Legal Profile Page. If your location is the HQ location, you just need to be set up with the required permissions to manage incentives. For more information about roles and permissions, see the [Permissions overview](permissions-overview.md).
+
+          If you aren't located in the same country/region as the HQ location, see [Instructions for multi-national accounts](https://support.microsoft.com/help/4515619/special-considerations-for-multi-national-partners-joining-the-microso) for more details on this scenario.
+
+      - question: |
+          What user roles are available?
+        answer: |
+          The person who enrolls the company in Partner Center becomes the Primary Contact and Global admin by default. The Admin can invite and manage users on the portal.
+
+          The key roles for incentives are Incentives admin and Incentives user. The Incentives admin can enroll in incentive programs and manage bank and tax details for the partner. The Incentives user can view reports in the tool to see what was paid, and the breakdown of each payment, but can't view or edit bank details. Both roles can apply to all locations under the Partner global account.
+
+          For more information, see [Permissions overview](permissions-overview.md).
+
+      - question: |
+          How can I find out who has Global or Account admin rights for my company?
+        answer: |
+          To find a Global admin or Account admin who can make role changes or assign roles to a new user:
+
+          1. From the Partner Center, select the Settings icon, then **Account settings**, then select **User management**.
+          2. Filter on either **Global admin** or **Account admin**.
+          3. You can also go to **My profile**, select **Roles and permissions** and see a list of the different admins who can help you elevate your permissions.
+
+          For more information, see [Find your role](./find-workspaces-roles-admins.md).
+
+      - question: |
+          I can't access incentives using my credentials.
+        answer: |
+          The likely reason you can't see incentives is that you don't have the correct permissions.
+          
+          To fix your permissions, use the following steps:
+
+          1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard/home) with your Azure AD tenant credentials (your work credentials). If you can't sign in, contact your company's Global administrator.
+
+          2. When signing in, if you're prompted to select from your **Work account** or **Personal account**, select **Work account**.
+
+          3. On the Partner Center menu, select **Incentives**, and then select **Overview**.
+          
+          - If you don't have Incentives admin or Incentives user permissions,  you're shown the contact information for all the Global and Account admins of your company. Contact one of these admins to obtain the incentive role for the required PartnerIDs and incentive programs.
+
+          - If you do have an Incentives admin role, you see the enrollments for your company for the PartnerIDs and incentive programs for which you have access.
+
+      - question: |
+          Some enrollments are missing from the incentives overview page.
+        answer: |
+          If you received an invitation from, or have enrolled in, an incentive program that is no longer visible in the dashboard, double-check that you have the appropriate access. Only users with Incentive User or Incentive Admin role can see the program. See [Find your role](./find-workspaces-roles-admins.md).
+
+          If you need to change your role or permissions, contact your company's global or account admin. To learn who these people are, read [Find your admin](./find-workspaces-roles-admins.md#find-your-admins).
+
+          The Overview page will only display enrollments that are associated with the Partner Global Account (PGA) associated with the Azure AD tenant. If your company has more than one PGA, you'll need to have different credentials for each one.
+
+      - question: |
+          Will incentives be changing with Microsoft AI Cloud Partner Program?
+        answer: |
+          If you have a legacy competency, you have options to continue attaining partner incentives.
+
+          **October 1, 2022, through September 30, 2023:**
+          - Option 1: Attain a Solutions Partner designation. Meet the requirements and immediately become eligible for incentives. 
+          - Option 2: Purchase legacy benefits (benefits you received based on the legacy competency you held on September 30, 2022), package. 
+            This option could apply if legacy competency is renewed by September 30, 2022.
+            Solutions Partner designation isn't attained. You can continue to be eligible for incentives until your first anniversary after September 30, 2022, or later (until October 1, 2023) if you choose to purchase a legacy benefits package on your anniversary date.
+            
+            Double incentives won't be possible.
+
+          **October 1, 2023, and beyond:**
+           - Attaining a Solutions Partner designation will be required to be eligible for incentives with either the legacy gold/silver benefits or the Solutions Partner benefits. Renewed legacy gold/silver benefits only are no longer recognized as eligible criteria for incentives, unless otherwise stated in applicable incentive program terms. Legacy competencies are no longer recognized as eligible criteria for incentives.  
+
+          
+      - question: |
+          Who should I contact if I get an error message or need help during the enrollment process?
+        answer: |
+          There's an online support service if you encounter any issue within the Incentives section of the Dashboard – see the support option (? Icon) in the top right.
+
+additionalContent: |
+
+  ## Next steps
+
+  - [Getting started with incentives](incentives-get-started-intro.md)

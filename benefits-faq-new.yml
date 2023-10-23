@@ -1,0 +1,162 @@
+### YamlMime:FAQ
+metadata:
+  title: Microsoft AI Cloud Partner Program benefits FAQ
+  ms.topic: faq
+  ms.date: 09/25/2023
+  description: Questions answered about policies regarding Microsoft AI Cloud Partner Program benefits.
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-benefits
+  author: JulCsc
+  ms.author: ashwinima
+
+title: Microsoft AI Cloud Partner Program benefits FAQ
+summary: |
+  **Appropriate roles**: MPN Partner Admin
+
+  The following article answers some of the main questions Microsoft AI Cloud Partner Program partners have about their membership benefits and product licenses.
+
+
+sections: 
+  - name: Membership
+    questions:
+      - question: |
+          What is the process and timing for renewing Solutions Partner designations?
+        answer: |
+          Your company can renew a Solutions Partner designation in Partner Center. You need to meet the Solutions area performance, skilling and customer success requirements and pay the annual fee within the renewal window to retain Solutions Partner designation status and access to associated benefits.
+
+          Prior to renewing your membership, the Global admin or Account admin for your company needs to review and update your business information. They can access the company profile in Partner Center to see the status and review what information needs to be updated. Extra documentation may be required to verify your information.
+
+          Your renewal window begins on the anniversary of your purchase date plus one day. For example, if your Anniversary date of the Membership offer is September 1, 2021, your 30-day renewal period begins on September 2, 2021. The users having the MPN Partner admin roles in your company receive the renewal communication leading up to your anniversary date and 30 days after. You'll continue to have access to associated benefits during the renewal window. 
+          
+          For more, information, see [Renew Membership Offer](renew-mpn-offers.md).
+
+      - question: |
+          What is the process and timing for renewing Gold and Silver membership?
+        answer: |
+          Gold and Silver memberships are retired as of September 30, 2022. However, if you were a Gold or Silver partner before September 30, 2022 and weren't qualified for Solutions Partner designation, you can purchase the benefits that you held on Sep 30, 2022 when the renewal window opens. The renewal window opens on the next day after your Anniversary date.
+
+      - question: |
+          Can I change the legacy silver, legacy gold or solutions partner designation benefits package mid-cycle?
+        answer: |
+          No.  The benefits package selected at the anniversary date is valid for 12 months and cannot be changed mid-cycle.  If a partner earns a Solutions Partner designation mid-cycle, the current benefits package remains the same until the next anniversary date. Benefits packages can only be changed at the anniversary date.
+
+      - question: |
+          When can I renew my Microsoft Action Pack?
+        answer: |
+         Your company can renew your Microsoft Action Pack in Partner Center during your renewal window.
+
+         Prior to renewing your Action Pack, the Global admin or Account admin for your company will need to review and update your company's business information. They can access your company's profile in Partner Center to see your status and understand what information needs to be updated. Extra documentation may be required to verify your information.
+
+         Your renewal window begins on the anniversary of your purchase date plus one day. For example, if you purchased the Microsoft Action Pack on September 1, 2020, your 30-day renewal period begins on September 2, 2021. You'll continue to have access to associated benefits during the renewal window. Purchase of an action pack will be disabled when an action pack offer is already active.
+
+         For more, information, see [Renew your Membership offers for Solutions Partner designations during the renewal window](renew-mpn-offers.md).
+
+      - question: |
+          What's the difference between the Microsoft Action Pack and the Learning Action Pack?
+        answer: |
+          The Microsoft Action Pack is a portfolio of resources to help partners like you familiarize yourselves with Microsoft technologies and build your solution or service. You can purchase one Microsoft Action Pack whether you have a Solutions Partner designation or not.
+
+          The Learning Action Pack is the entry level into the Learning Partner Program. The Learning program provides resources for businesses who offer technology training and/or have a learning practice. The [Learning Action Pack](https://partner.microsoft.com/asset/collection/learning-option-enrollment#/) offers discounts on Courseware, Marketplace, and benefits to help partners become experts across various Microsoft product lines. Refer to the [licensing table](https://assetsprod.microsoft.com/microsoft-action-pack-license-table.pdf) for the Microsoft Action Pack and the Learning Action Pack.
+
+      - question: |
+          What happens to our competency or Action Pack benefits during the 30-day renewal period?
+        answer: |
+          Per the Microsoft AI Cloud Partner Program Agreement, you'll continue to have access to program benefits as long as your offer is active. Once a membership expires, access to benefits will be lost.
+
+          For more, information, see [Renew Cloud Partner Program Offer](renew-mpn-offers.md)
+
+  - name: Product licenses
+    questions:
+      - question: |
+          What are the current offers for partners in the Microsoft AI Cloud Partner Program on product licenses?
+        answer: |
+          Product licenses (also referred to as internal use licenses or internal use rights) are included in the benefits when partners purchase a Solutions Partner designation or purchase legacy gold or silver benefits or Microsoft Action Pack. Get a list of current offers of product licenses from the [Microsoft AI Cloud Partner Program Guide](https://aka.ms/partner-benefits-use-guide).
+
+      - question: |
+          Can a single token be used to unlocked multiple subscriptions?
+        answer: |
+          No, you can't split tokens to unlock multiple subscriptions. The tokens must be used in the format provided. For example, a 25-seat token can't be split into 5 different 5-seat tokens.
+
+          For additional information, review the Microsoft Partner Programs Guide [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          If we activated our token for cloud services on a wrong tenant, or added seats instead of extending, can we get a replacement token?
+        answer: |
+          Replacement tokens for cloud service activations on wrong tenant and for seats added by mistake on existing subscriptions, can be issued one-time only, within 30 days after activation of the original token.
+
+          For additional information, review the Microsoft Partner Programs Guide [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          For on-premises software product licenses, do we need to have a product key for installation?
+        answer: |
+          Not all products require a product key. Product activation is required for Windows server and client operating systems and all Microsoft Office client applications.
+
+          For additional information, review the Microsoft Partner Programs Guide  [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          Can we acquire more product keys if we consumed all installations and activations?
+        answer: |
+          Some product keys issued are Multiple Activation Keys (MAK). These products have a finite number of installations, activations, or seats. A product key will stop working when all installations and activations have been consumed. Extra activations for these product keys won't be granted.
+
+          For more, information, see Microsoft Partner Programs Guide  [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          What if we decide not to renew our Solutions Partner designation or legacy gold or silver benefits or Microsoft Action Pack, can we still use the on-premises software product licenses?
+        answer: |
+          No. The on-premises software product licenses that are included with Solutions Partner designation or legacy gold or silver benefits pack and the Microsoft Action Pack aren't perpetual. You're entitled, and have the right, to use these licenses only during your membership. You'll need to obtain license rights via Commercial Licensing or uninstall any on-premises software obtained via the Microsoft AI Cloud Partner Program if you choose not to renew your membership offer.
+
+          For more, information, see Microsoft Partner Programs Guide [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          Does Microsoft Action Pack include Visual Studio Enterprise subscription?
+        answer: |
+          No, the Microsoft Action Pack includes Visual Studio Professional subscriptions only.
+
+          For more, information, see Microsoft Partner Programs Guide [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          Can we share the Visual Studio subscriptions that are included with Solutions Partner designation or legacy gold or silver benefits or Microsoft Action Pack?
+        answer: |
+          No, Visual Studio subscriptions are licensed per user and must be assigned and activated to be valid. Sharing sign in credentials is prohibited.
+
+          For more, information, see Microsoft Partner Programs Guide [aka.ms/partner-benefits-use-guide](https://aka.ms/partner-benefits-use-guide)
+
+      - question: |
+          How do we know how many product licenses our company has?
+        answer: |
+          You can view and manage product licenses and other benefits in Partner Center. Learn more in [manage your Microsoft AI Cloud Partner Program benefits](manage-your-partner-network-benefits.md).
+
+      - question: |
+          How can our company use the product licenses available to us?
+        answer: |
+          We include product licenses for partners in the Microsoft AI Cloud Partner Program who attain Solutions Partner designation or legacy gold or silver benefits or purchase a Microsoft Action Pack to help them build innovative solutions and become familiar with Microsoft products and technologies. The terms of use for product licenses are explained in the [Microsoft AI Cloud Partner Program Guide](https://aka.ms/partner-benefits-use-guide).
+
+      - question: |
+          Are there limitations to how our company can use the product licenses available to us?
+        answer: |
+          Yes, there are limitations. Product license terms of use are different from commercial licenses acquired through Microsoft licensing programs. For more information, read [Product licensing terms of use](https://www.microsoft.com/licensing). 
+          
+          Product licenses don't include software assurance and there are some restrictions on product licenses. You can review the terms of use for product licenses in the [Microsoft AI Cloud Partner Program Guide](https://aka.ms/partner-benefits-use-guide).
+
+      - question: |
+          How do we add more product licenses to what's listed in Partner Center so that our company is covered?
+        answer: |
+          The product licenses have different terms of use from commercial licenses acquired through Microsoft licensing programs. We recommend reviewing your options for meeting your company's licensing needs on the [Microsoft Licensing page](https://www.microsoft.com/licensing).
+
+      - question: |
+          We recently merged with or acquired another company in the Microsoft Partner Center that has benefits. Do we get to keep all of our current product licenses when we use the account merge capability in Partner Center?
+        answer: |
+          When you use the account merge capability in Partner Center, each account's existing benefits remain as is until the next renewal. Upon renewal, benefits that are included with Solutions Partner designation or legacy gold or silver benefits or Action Pack are implemented for the partner company's Partner global account.
+
+          Review the information about [account merge](merge-accounts.md) to learn more about how the capability works and how to decide if it's right for your company's needs.
+
+      - question: |
+          We have questions about our company's product licenses in Partner Center. Where do we get help with that?
+        answer: |
+          You can go to the [Support section of Partner Center](https://partner.microsoft.com/support) for links to resources or to open a ticket with our partner support team, if needed.
+
+additionalContent: |
+
+  ## Next steps
+     - [Locate your Microsoft AI Cloud Partner Program benefits](mpn-find-benefits.md)
+     - [Renew your Membership offers for Solutions Partner designations during the renewal window](renew-mpn-offers.md)

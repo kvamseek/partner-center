@@ -1,0 +1,313 @@
+### YamlMime:FAQ
+metadata:
+  title: Payouts and tax profile FAQ
+  description: Get answers to common questions about payouts and tax details in Partner Center. Includes answers about why your earnings are different than you expected.
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-payouts
+  ms.topic: faq
+  author: deeparamani
+  ms.author: deramani
+  ms.date: 08/07/2023
+
+title: Common questions about payouts and taxes
+summary: |
+  **Appropriate roles**: Account admin | Global admin | Incentives admin
+
+  This article answers frequently asked questions about payouts and tax details in Partner Center.
+  
+  Subjects covered include:
+  
+  - Timing of payments
+  - Checking your earnings eligibility
+  - The importance of setting up your payout and tax profiles correctly.
+
+
+sections:
+  - name: Profile management
+    questions:
+      - question: |
+          Why do I need to provide or update my payout and tax details?
+        answer: |
+          All partners enrolling in a new program must provide valid payout and tax details to complete their enrollment and receive payments.
+          
+          An enrollment is considered complete only after Microsoft has validated your payout and tax profile.
+
+          You might also need to update your information if the rules for your program change or if aspects of your profile expire or become outdated. If that happens, your **Overview** page will show a status of **Action required – Update bank and/or tax profile**.
+
+      - question: |
+          How do I find, set up, or update payout and tax details?
+        answer: |
+          For detailed information about how to update payment and tax details in Partner Center, see [Set up commercial marketplace payout and tax profiles](set-up-your-payout-account.md).
+
+      - question: |
+          Why don't I see my enrollments when I go to assign my payout and tax profile?
+        answer: |
+          Two reasons for not seeing enrollment are:
+          - You don't have the required permissions.
+          - You're logged in with an account that doesn't have the required permissions.
+          
+          For example, only *Incentives admins* for your Microsoft AI Cloud Partner Program location can create or manage payout and tax profiles. 
+          
+          To manage permissions, contact your organization administrator.
+
+      - question: |
+          I'm only able to sign in with my @onmicrosoft.com domain. What should I do?
+        answer: |
+          Contact your Account administrator to add more domains to the Azure AD account.
+
+      - question: |
+          My organization is participating in multiple programs. Do I need to provide my payment and tax profile multiple times?
+        answer: |
+          It depends on your organization's needs. Payment profiles are created at an organization level, which enables the same bank profile to be assigned across multiple PartnerIDs and programs within an organization. In most cases, you can either reuse an existing profile or create a new one.
+
+          There might be exceptions when applying your bank profile to different countries or regions, because local bank or tax rules might apply.
+
+          Tax profiles created for a Microsoft AI Cloud Partner Program location get reused and automatically populated when the same Microsoft AI Cloud Partner Program location participates in another program. There can be exceptions, however. For example, the payout rules of a new incentive program might require more details for the tax profile.
+
+      - question: |
+          Can I use the same bank and tax details for all incentive programs at Microsoft?
+        answer: |
+          If your company is invited for multiple programs, you can use the same payment account for all your programs, or you can choose to have different payment accounts for the different programs.
+
+
+      - question: |
+          How does Microsoft ensure that bank information is indeed that of the company, and not a personal bank account for an employee?
+        answer: |
+          It's the company's responsibility to ensure that the role of Incentives admin—which has the permissions to edit that information—is only given to appropriate employees.
+
+      - question: |
+          My tax profile has expired. How do I update it?
+        answer: |
+          If a tax profile is expired or is about to expire, that means that the tax form that you had provided to Microsoft needs to be updated.
+          
+          To update your tax profile, use the following steps:
+
+          1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard/home) and select the **Settings** (gear) icon.
+          2. Select **Account settings** and then select **Payout and tax profile.
+          3. Select **Tax profiles**.
+          4. Check the column **Expiration Date** and go to the tax profile that is expired or about to expire.
+          5. Select **Edit** to launch the tax profile edit process.
+          6. In the tax form section, provide the updated details.
+
+  - name: Earnings incorrect or missing
+    questions:
+      - question: |
+          Why are my earnings missing?
+        answer: |
+          - The customer order might not be eligible for payout yet.
+            - For non-enterprise customer orders, Microsoft must receive customer payment before a publisher becomes eligible for earnings.
+            - For enterprise customer orders, earnings are available one to two days after the purchase order date.
+            - Verify order status in [Orders reports](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/order).
+          - Earnings from transactions before July 2019 might appear in the transaction history report. You can look for them at [**Payouts > Export data**](https://partner.microsoft.com/dashboard/payouts/reports/incentiveexport).
+          -  To understand when your earnings should appear in the payout statement, see [Payment thresholds, methods, and time frames](payment-thresholds-methods-timeframes.md).
+
+      - question: |
+          Why is my earnings amount different than what I expected?
+        answer: |
+          - If a customer makes a partial payment for an order, your earning amount will be based on the partially paid amount (after fees and appropriate taxes are deducted).
+          - Check tax remit responsibility by country/region. In countries/regions in which Microsoft is responsible for collecting taxes, Microsoft collects and deducts the tax from publisher earnings. The transaction amount shown in the statement is the after-tax amount.
+          - Offers have a store service fee of 3%, so the effective earnings rate is 97%.
+
+          **For more information, see**:
+          - [Microsoft Publisher Agreement](/legal/marketplace/msft-publisher-agreement)
+          - [Payout schedules and processes](payout-policy-details.md)
+          - [Payment thresholds, methods, and time frames](payment-thresholds-methods-timeframes.md)
+          - [Getting paid in Partner Center](marketplace-get-paid.md)
+          - [Tax details for commercial marketplace publishers](tax-details-marketplace.md)
+          - [Transaction history](transaction-history.md)
+
+  - name: Earnings reconciliation
+    questions:
+      - question: |
+          How do I reconcile payout statements with order or usage reports in analytics?
+        answer: |
+          Use *AssetID*, *orderID*, and *line item ID* in the payout transaction history report with analytic orders and usage reports.
+          
+          Use this mapping:
+
+          - Payout Transaction History.AssetID = order.OrderID
+          - Payout Transaction History.OrderID & LineItem = Usage.UsageReferenceID [OrderID:LineItemID]
+
+      - question: |
+          How do I know when to expect payments for my customer orders?
+        answer: |
+          - First, using your *assetID*, check customer orders in [Orders reports](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/order).
+          - Check the customer channel for your customer subscription in [customers report](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/customer).
+          - For enterprise customers, publisher earnings appear in the statement one to two days after the purchase order date.
+          - For non-enterprise customers, publisher earnings appear in the statement one to two days after a customer payment is received.
+
+          **For more information, see**:
+          
+          - [Transaction history](transaction-history.md)
+          - [Orders dashboard in commercial marketplace analytics](/azure/marketplace/partner-center-portal/orders-dashboard)
+
+  - name: Payments and adjustments
+    questions:
+      - question: |
+          Why is my payment missing?
+        answer: |
+          - Ensure that your payout status and tax profile status appear as *valid* on the [overview page](https://partner.microsoft.com/dashboard/commercial-marketplace/overview).
+          - You might not have met the minimum threshold for a payment. Earnings must be at least USD50 to receive a payment.
+
+
+      - question: |
+          How do I set my account not to receive payments?
+        answer: |
+          You can hold payments in [Payout Profile](https://partner.microsoft.com/dashboard/commercial-marketplace/overview). To do so, select **Hold**. Microsoft will hold payment to you until you release the hold.
+
+      - question: |
+          Are there any limitations on which payout currencies are available in Partner Center for the Azure Marketplace program?
+        answer: |
+          The selection of the payment profile country/region, as part of the Partner Center registration, determines which payout options and currency are available.
+          - For EFT (bank) payments in the United States, you can only select USD currency.
+          - For bank payments in all other countries/regions, all available currencies are available for selection if they're supported by the _pay to bank_.
+          - PayPal as a payout option is allowed for Azure Marketplace in some countries and regions. For a list of countries and regions, see [Payment thresholds, methods, and time frames](payment-thresholds-methods-timeframes.md).
+
+      - question: |
+          Why do I receive payment in a different currency than the purchase currency?
+        answer: |
+          - *Payout* currency is determined by the currency you selected in the payout profile.
+          - *Purchase* currency is determined the currency in which the customer paid.
+
+      - question: |
+          How do I reconcile adjustments?
+        answer: |
+          Payment adjustments are payment corrections to accommodate compensatory adjustments such as system issues.
+          
+          In a payout statement, the *ReasonCode* specifies the reason for an adjustment. ReasonCodes aren't meant to reconcile directly with individual transactions.
+
+          To learn more, see the following pages:
+          
+          - [Microsoft Publisher Agreement](/legal/marketplace/msft-publisher-agreement)
+          - [Payout schedules and processes](payout-policy-details.md)
+          - [Tax details](tax-details-marketplace.md)
+          - [Payment thresholds, methods, and time frames](payment-thresholds-methods-timeframes.md)
+
+  - name: Taxes
+    questions:
+      - question: |
+          How can I identify tax remit responsibility between Microsoft or Publisher in the payout statement?
+        answer: |
+          - In the transaction history download, find the **Tax model** column, which shows *MS Managed* or *ISV Managed*.
+
+          - To see country/region-specific tax rules and payout implications, see [Tax details for commercial marketplace publishers](tax-details-marketplace.md).
+
+      - question: |
+          How can I download service fee tax forms?
+        answer: |
+          Go to the **Payout Payment** page and then the **List of Payment** section.
+          
+          A link to the service fee tax form appears for a payment that has a service fee tax.
+
+      - question: |
+          Where can I find year-end tax forms?
+        answer: |
+          Go to the [**Account settings | Payout and tax profiles**](https://partner.microsoft.com/dashboard/payee/profiles/partner/manage) to view your year-end tax forms.
+
+      - question: |
+          How do I find the withholding tax for a transaction?
+        answer: |
+          Withholding tax is applicable for U.S. publishers who filed a W-9 form. Withholding tax is calculated on a monthly payment.
+
+          **For more information, see**:
+          - [Commercial Marketplace Publisher Agreement](/legal/marketplace/msft-publisher-agreement)
+          - [Payout policy details](payout-policy-details.md)
+
+  - name: Payout statement access
+    questions:
+      - question: |
+          How do I access a payout statement?
+        answer: |
+          1. Check your roles. You must have the *Financial contributor* or *Account owner* role to access a payout statement.
+          2. From the dashboard, select the **Payouts** workspace to view your payout statement.
+          3. Choose between **Transaction History**, **Payment**, and **Download**.
+
+          **For more information, see**:
+
+          - [Payout roles and permissions](reconciliation-faq.md#roles-and-permissions)
+          - [Transaction history](transaction-history.md)
+
+  - name: Payout statement report
+    questions:
+      - question: |
+          What does each field in the transaction download mean?
+        answer: |
+           For a detailed list of the attributes and their meanings, see [Transaction history](transaction-history.md).
+
+      - question: |
+          What is earning status?
+        answer: |
+          *Earning status* shows your earnings as either unprocessed, processed, or sent.
+
+          - **Unprocessed** earnings are in escrow until their maturity date.
+          - **Processed** earnings have matured and are prepared in a monthly payment. Payments are released by fifteenth day of each month.
+          - **Sent** payments have been successfully released to the bank on your payout profile.
+
+      - question: |
+          How do I download service fee tax forms?
+        answer: |
+          Go to the **Payout Payment** page and then the **List of Payment** section. A link to the service fee tax form appears for a payment that has a service fee tax.
+
+      - question: |
+          How do I download a withholding tax form as a PDF?
+        answer: |
+          Go to the **Payout Payment** page and then the **List of Payment** section. A link to a withholding tax form appears next to a payment. A withholding tax form applies only to selected incentive programs, not to a commercial marketplace payout.
+
+      - question: |
+          Where do I find year-end tax forms?
+        answer: |
+          Go to the [Profile page](https://partner.microsoft.com/dashboard/payee/profiles/partner/manage) to view your year-end tax forms.
+
+          To learn more, see the following pages:
+          
+          - [Transaction history](transaction-history.md)
+          - [Transaction history download](transaction-history.md#transaction-history-download)
+
+  - name: Historical statements
+    questions:
+      - question: |
+          How do I view historical information?
+        answer: |
+          A historical statement shows a snapshot of payout data as of October 2019.
+          Payout information in a historical statement isn't updated. Submit a support request to get the latest information.
+
+          To learn more, see the following pages:
+          
+          - [Transaction history](transaction-history.md)
+          - [Transaction history download](transaction-history.md#transaction-history-download)
+
+  - name: Payout export API
+    questions:
+      - question: |
+          How do I download payout data?
+        answer: |
+          Use the [Partner Payouts API](/rest/api/partner-center/partner-payouts).
+
+  - name: Commercial marketplace payout policies
+    questions:
+      - question: |
+          How do I find the current store service fee and the payout rate?
+        answer: |
+          - The store service fee is 3%.
+          - In your payout statement, **Earning Rate** specifies the actual payout rate for a given transaction.
+
+      - question: |
+          When can I expect a payment from Microsoft after earnings appear on my statement?
+        answer: |
+          - Once your earning is in unprocessed status, you can check maturity date for the month your earnings is processed for payment.
+          - Once your payment is prepared, your earning status will change to *Processed*. Microsoft releases payments by the fifteenth do of the maturity month.
+          - For orders paid by credit card, Microsoft holds payments for 30 days until the earning has matured.
+
+           **For more information, see**:
+           
+           - [Microsoft Publisher Agreement](/legal/marketplace/msft-publisher-agreement)
+           - [Payout schedules and processes](payout-policy-details.md
+           - [Tax details](tax-details-marketplace.md)
+           - [Payment thresholds, methods, and time frames](payment-thresholds-methods-timeframes.md)
+
+additionalContent: |
+
+  ## Next steps
+
+  - [Getting paid in Partner Center](marketplace-get-paid.md)
+  - [Set up commercial marketplace payout and tax profiles](set-up-your-payout-account.md)

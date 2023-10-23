@@ -1,0 +1,409 @@
+### YamlMime:FAQ
+metadata:
+  title: Partner security requirements FAQ
+  ms.topic: faq
+  ms.date: 05/12/2023
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-account
+  description: Frequently asked questions about the partner security requirements - what they are, how partners should implement them, and how you know if you've met them.
+  author: vijay-vala
+  ms.author: vijvala
+
+title: Common questions about partner security requirements
+summary: |
+  **Appropriate roles**: All Partner Center users
+
+  This article answers some common questions about the [partner security requirements](partner-security-requirements.md) in the **Account settings** workspace.
+
+  ## What are the partner security requirements and why should partners implement them?
+
+  We see an increasing number of increasingly sophisticated security attacks—primarily attacks related to identity compromise.
+  
+  We introduced [mandatory security requirements](partner-security-requirements.md) because preventive controls play a key role in an overall defense strategy. All partners participating in the Cloud Solution Provider (CSP) program, Control Panel Vendors, and Advisors must implement those security requirements to stay compliant.
+
+  ## What are the timelines and milestones for implementing security requirements?
+
+  The terms associated with the security requirements, including timelines and milestones, are included with the [Microsoft Partner Agreement](microsoft-partner-agreement.md). You must implement those security requirements as soon as possible to stay compliant so you can participate in the CSP program.
+
+  ## What happens if I don't implement the partner security requirements?
+
+  The Microsoft Partner Agreement requires that you enforce multifactor authentication for user accounts, and that you adopt the secure application model for interacting with the Partner Center API.
+
+  Partners who don't abide by those security practices can lose the ability to transact in the CSP program or manage customer tenants using delegate admin rights.
+
+  ## Do the security requirements apply to all geographies?
+
+  Yes. (Although Azure Government and Azure Germany aren't currently required to meet the security requirements, we strongly recommend that *all* partners adopt these security requirements immediately.)
+
+  ## Is it possible to get an exclusion for an account?
+
+  No, it isn't possible to exclude any user account from the requirement of having multifactor authentication (MFA) enforced. Given the highly privileged nature of being a partner, the Microsoft Partner Agreement requires that multifactor authentication is enforced for each user account in your partner tenant.
+
+  ## How do I know if I've met the partner security requirements?
+
+  To meet the partner security requirements, use the following steps:
+
+  - Meet all requirements described in the [Security requirements for using Partner Center or Partner Center APIs](partner-security-requirements.md).
+  - Ensure that all user accounts in your partner tenant have multifactor authentication enforced.
+
+  To help identify areas where you can take actions, we provide the [security requirements status report](https://partner.microsoft.com/commerce/security/compliance) at Partner Center.
+
+  For more information about the status report, see [partner security requirements status](partner-security-compliance.md).
+
+
+sections:
+  - name: Required actions
+    questions:
+      - question: |
+          What actions I need to take to meet security requirements?
+        answer: |
+          All partners in the CSP program (direct-bill, indirect provider, and indirect reseller), Advisors, and Control Panel Vendors must meet the requirements.
+
+          1. **Enforce MFA for all users**
+
+              All partners in the CSP program, Advisors, and Control Panel Vendors are required to enforce MFA for all users in their partner tenant.
+
+              Other considerations:
+
+              - Indirect providers need to work with indirect resellers to onboard to Partner Center, if they haven't done so already, and encourage their resellers to meet the requirements.
+              - Azure AD multifactor authentication is available to users in the partner tenant at no cost through Azure AD security defaults, with the only verification method of an authenticator application that supports time-based, one-time passwords (TOTP).
+              - Other verification methods are available through the [Azure Active Directory Premium](/azure/active-directory/fundamentals/active-directory-get-started-premium) SKUs, if other methods such as a phone call or text message are required.
+              - Partners can also use a third-party MFA solution for each account when accessing Microsoft commercial cloud services.
+
+          2. **Adopt the Secure Application Model framework**
+
+              Partners who have developed custom integration using any APIs (such as Azure Resource Manager, Microsoft Graph, Partner Center API, and so on) or implemented custom automation using tools such as PowerShell, must adopt the [Secure Application Model framework](/partner-center/develop/enable-secure-app-model) to integrate with Microsoft cloud services. Failure to do so can result in a disruption due to MFA deployment.
+              
+              The following resources provide an overview and guidance about how to adopt the model.
+
+              - [Secure Application Model overview](/partner-center/develop/enable-secure-app-model)
+              - [Partner Center: Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf)
+              - [Partners in CSP program: .NET sample code for enabling Secure Application Model](/samples/microsoft/partner-center-dotnet-samples/secure-app-model/)
+              - [Partners in CSP program: Java sample code for enabling Secure Application Model](/samples/microsoft/partner-center-java-samples/secure-app-model/)
+              - [Partner Center authentication document](/partner-center/develop/partner-center-authentication)
+              - [Partner Center PowerShell Multifactor Authentication (MFA) document](/powershell/partnercenter/multi-factor-auth)
+
+              Consult with the vendor if you're using a control panel regarding the adoption of the Secure Application Model framework.
+
+              Control panel vendors are required to [onboard](enroll-as-cpv.md) to Partner Center as control panel vendors and to start implementing this requirement immediately. Refer to the [Partner Center: Secure Application Model framework](https://assetsprod.microsoft.com/secure-application-model-guide.pdf).
+              
+              Control panel vendors must accept and manage CSP partners' consent instead of credentials and purge all existing CSP partners' credentials.
+
+  - name: Multifactor authentication
+    questions:
+      - question: |
+          What is multifactor authentication (MFA)?
+        answer: |
+          MFA is a security mechanism to authenticate individuals using more than one required security and validation procedure. It works by requiring two or more of the following authentication methods:
+
+          - Something you know (typically a password)
+          - Something you have (a trusted device that isn't easily duplicated, like a phone)
+          - Something you are (biometrics)
+
+      - question: |
+          Is there a cost for enabling MFA?
+        answer: |
+          Microsoft provides MFA at no cost through the implementation of Azure AD security defaults. The only verification option available using this version of MFA is an authenticator application.
+          - If a phone call or SMS message is required, then an [Azure Active Directory Premium](/azure/active-directory/fundamentals/active-directory-get-started-premium) license must be purchased.
+          - Alternatively, you can utilize a third-party solution to provide MFA for each user in your partner tenant. In that case, it is your responsibility to ensure your MFA solution is being enforced and that you're compliant.
+
+      - question: |
+          What actions do I need to take if I already have an MFA solution?
+        answer: |
+          Users in a partner tenant must authenticate using MFA when accessing Microsoft commercial cloud services.
+          Third-party solutions can be used to fulfill these requirements.
+          Microsoft no longer provides validation testing to independent identity providers for compatibility with Azure Active Directory. To test your product for interoperability, see [Azure AD Identity Provider Compatibility Docs](https://www.microsoft.com/download/details.aspx?id=56843).
+
+          > [!IMPORTANT]
+          > If you're using a third-party solution, it's important to verify that the solution is issuing the authentication method reference (AMR) claim that includes the MFA value. For details about how validating your third-party solution is issuing the expected claim, see [Testing the Partner Security Requirements](/powershell/partnercenter/test-partner-security-requirements).
+
+      - question: |
+          I use multiple partner tenants to transact. Do I need to implement MFA on all of them?
+        answer: |
+          Yes. You must enforce MFA for each Azure Active Directory tenant associated with the CSP program or the Advisor program. To purchase an Azure Active Directory Premium license, you must purchase an Azure Active Directory license for the users in each Azure Active Directory tenant.
+
+      - question: |
+          Does each user account in my partner tenant need to have MFA enforced?
+        answer: |
+          Yes. Each user must have MFA enforced. However, if you're using Azure AD security defaults, no other action is required because that feature enforces MFA for all user accounts. Enabling security defaults is a free and easy way to ensure that your user accounts are MFA-compliant and not affected when MFA is enforced.
+
+      - question: |
+          I'm a direct-bill partner with Microsoft. What do I need to do?
+        answer: |
+          Direct-bill Cloud Solution Provider partners must enforce MFA for each user in their partner tenant.
+
+      - question: |
+          I'm an indirect reseller and only transact through a distributor. Do I still have to do enable MFA?
+        answer: |
+          Yes. All indirect resellers are required to enforce MFA for each user in their partner tenant. The indirect reseller must enable MFA.
+
+      - question: |
+          I don't use the Partner Center API. Do I still need to implement MFA?
+        answer: |
+          Yes. This security requirement is for all users, including Partner admin users and end users in a partner tenant.
+
+      - question: |
+          Which third-party vendors provide MFA solutions compatible with Azure Active Directory?
+        answer: |
+          When you're reviewing MFA vendors and solutions, you must ensure that the solution you choose is compatible with Azure Active Directory.
+
+          Microsoft no longer provides validation testing to independent identity providers for compatibility with Azure Active Directory. If you want to test your product for interoperability, refer to [Azure AD Identity Provider Compatibility Docs](https://www.microsoft.com/download/details.aspx?id=56843).
+
+          For more information, see the [Azure AD federation compatibility list](/azure/active-directory/hybrid/how-to-connect-fed-compatibility).
+
+      - question: |
+          How can I test MFA in our integration sandbox?
+        answer: |
+          The Azure AD security defaults feature should be enabled. Alternatively, you can use a third-party solution that uses federation.
+
+      - question: |
+          Will enabling MFA affect how I interact with my customer's tenant?
+        answer: |
+          No. The fulfillment of these security requirements won't affect how you manage your customers. Your ability to perform delegated administrative operations won't be interrupted.
+
+      - question: |
+          Are my customers subject to the partner security requirements?
+        answer: |
+          No. You aren't required to enforce MFA for each user in your customer's Azure AD tenants. However, it's recommended that you work with each customer to determine how best to protect their users.
+
+      - question: |
+          Can any user be excluded from the MFA requirement?
+        answer: |
+          No. Every user in your partner tenant, including service accounts, must authenticate using MFA.
+
+      - question: |
+          Do the partner security requirements apply to the integration sandbox?
+        answer: |
+          Yes. That means you must implement the appropriate MFA solution for users in the integration sandbox tenant. It's recommended that you implement Azure AD security defaults to provide MFA.
+
+      - question: |
+          How do I configure an emergency access ("break glass") account?
+        answer: |
+          It's considered a best practice to create one or two emergency access accounts to prevent being inadvertently locked out of your Azure AD tenant. With respect to the partner security requirements, it's required that each user authenticates using MFA. This requirement means you'll need to modify the definition of an emergency access account. It could be an account that uses a third-party solution for MFA.
+
+      - question: |
+          Is Active Directory Federation Service (ADFS) required if I'm using a third-party solution?
+        answer: |
+          No. It isn't required to have Active Directory Federation Service (ADFS) if you're using a third-party solution. It's recommended that you work with the vendor of the solution to determine what the requirements for their solution are.
+
+      - question: |
+          Is it a requirement to enable Azure AD security defaults?
+        answer: |
+          No.
+
+      - question: |
+          Can conditional access be used to meet the MFA requirement?
+        answer: |
+          Yes. You can use conditional access to enforce MFA for each user, including service accounts, in your partner tenant. However, given the highly privileged nature of being a partner, we need to ensure that each user has an MFA challenge for every single authentication. That means that you can't use the feature of conditional access that circumvents the requirement for MFA.
+
+      - question: |
+          Will the service account used by Azure AD Connect be affected by the partner security requirements?
+        answer: |
+          No. The service account used by Azure AD Connect won't be affected by the partner security requirements. If you experience an issue with Azure AD Connect as result of enforcing MFA, then open a technical support request with Microsoft support.
+
+  - name: Secure Application Model
+    questions:
+      - question: |
+          Who should adopt the secure application model to meet the requirements?
+        answer: |
+          Microsoft has introduced a secure, scalable framework for authenticating Cloud Solution Provider (CSP) partners and Control Panel Vendors (CPV) that uses multifactor authentication. For more information, see the [Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf). All partners who have developed custom integration using any APIs (such as Azure Resource Manager, Microsoft Graph, Partner Center API, and so on) or implemented custom automation using tools such PowerShell, will need to adopt the [Secure Application Model framework](/partner-center/develop/enable-secure-app-model) to integrate with Microsoft cloud services.
+
+      - question: |
+          What is the Secure Application Model?
+        answer: |
+          Microsoft is introducing a secure, scalable framework for authenticating Cloud Solution Provider (CSP) partners and Control Panel Vendors (CPV) that uses multifactor authentication. For more information, see the [Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf).
+
+      - question: |
+          How do I implement the Secure Application Model?
+        answer: |
+          All partners who have developed custom integration using any APIs (such as Azure Resource Manager, Microsoft Graph, Partner Center API, and so on) or implemented custom automation using tools such PowerShell, must adopt the [Secure Application Model framework](/partner-center/develop/enable-secure-app-model) to integrate with Microsoft cloud services. Failure to do so can result in a disruption due to MFA deployment.
+          
+          The following resources provide an overview and guidance regarding how to adopt the model:
+
+          - [Secure Application Model overview](/partner-center/develop/enable-secure-app-model)
+          - [Partner Center: Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf)
+          - [Partners in CSP program: .NET sample code for enabling Secure Application Model](/samples/microsoft/partner-center-dotnet-samples/secure-app-model/)
+          - [Partners in CSP program: Java sample code for enabling Secure Application Model](/samples/microsoft/partner-center-java-samples/secure-app-model/)
+          - [Partner Center authentication document](/partner-center/develop/partner-center-authentication)
+          - [Partner Center PowerShell Multifactor Authentication (MFA) document](/powershell/partnercenter/multi-factor-auth)
+
+          If you're using a control panel, you need to consult with the vendor regarding the adoption of the Secure Application Model framework.
+
+          Control panel vendors are required to [onboard](enroll-as-cpv.md) to Partner Center as a control panel vendor and start implementing this requirement immediately.
+          
+          Refer to the [Partner Center: Secure Application Model framework](https://assetsprod.microsoft.com/secure-application-model-guide.pdf). Control panel vendors must accept and manage CSP partners' consent instead of credentials and purge all existing CSP partners' credentials.
+
+      - question: |
+          Does the Secure Application Model need to be implemented for the Partner Center API/SDK only?
+        answer: |
+          By enforcing multifactor authentication for all user accounts, any automation or integration that is intended to run non-interactively is affected. Although the partner security requirements require you to enable the secure application model for the Partner Center API, it can be used to address the need for a second factor of authentication with automation and integration.
+
+          > [!NOTE]
+          >Resources being accessed must support access token-based authentication.
+
+      - question: |
+          I'm using automation tools such as PowerShell. How do I implement the Secure Application Model?
+        answer: |
+          You must implement the Secure Application Model if your automation runs non-interactively and relies on user credentials for authentication. See [Secure Application Model | Partner Center PowerShell](/powershell/partnercenter/multi-factor-auth) for guidance on how to implement this framework.
+
+          > [!NOTE]
+          >Not all automation tools can authenticate using access tokens. Post a message on the [Partner Center Security Guidance](https://www.microsoftpartnercommunity.com/t5/Partner-Center-Security-Guidance/ct-p/partner-center-security-guidance) group if you need help understanding what changes need to be made.
+
+      - question: |
+          What user credentials should the application administrator provide when performing the consent process?
+        answer: |
+          It's recommended that you use a service account that has been assigned the least privileged permissions. With respect to the Partner Center API, you should use an account that has either been assigned to the Sales agent or Admin agent role.
+
+      - question: |
+          Why shouldn't the application administrator provide Global admin user credentials when performing the consent process?
+        answer: |
+          It's a best practice to use a least-privileged identity because doing so reduces risk. It's not recommended to use an account that has Global admin privileges because that provides more permissions than are required.
+
+      - question: |
+          I'm a CSP partner. How do I know if my Control Panel Vendor (CPV) is working on implementing the solution or not?
+        answer: |
+          For partners using a Control Panel Vendor (CPV) solution to transact in the Cloud Solution Provider (CSP) program, it's your responsibility to consult with your CPV.
+
+      - question: |
+          What is a control panel vendor (CPV)?
+        answer: |
+          A control panel vendor is an independent software vendor that develops apps for use by CSP Partners to integrate with Partner Center APIs. A control panel vendor isn't a CSP Partner with direct access to the Partner Center or APIs. A detailed description is available within the [Partner Center: Secure Applications Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf).
+
+      - question: |
+          I'm a CPV. How do I enroll?
+        answer: |
+          To enroll as a control panel vendor (CPV), follow the guidelines in [*Enroll as a Control Panel Vendor to help integrate CSP partner systems with Partner Center APIs*](enroll-as-cpv.md).
+
+          After you enroll in Partner Center and register your applications, you'll have access to Partner Center APIs. You'll receive your sandbox information in a Partner Center notification if you're a new CPV. After you have completed enrollment as a Microsoft CPV and accepted the CPV agreement, you can:
+
+          -  Manage multi-tenant applications (add applications to Azure portal, and register and unregister applications in Partner Center).
+
+             > [!NOTE]
+             >CPVs must register their applications in Partner Center to get authorized for Partner Center APIs. Adding applications to the Azure portal alone doesn't authorize CPV applications for Partner Center APIs.
+
+          - View and manage your CPV profile.
+
+          - View and manage your users who need access to CPV capabilities. A CPV can only have the role Global admin.
+
+      - question: |
+          I'm using the Partner Center SDK. Will the SDK automatically adopt the Secure Application Model?
+        answer: |
+          No. You must follow the guidelines in the [Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf).
+
+      - question: |
+          Can I generate a refresh token for the secure application model with accounts that don't have MFA enabled?
+        answer: |
+          Yes. A refresh token can be generated using an account that doesn't have MFA enforced. However, doing so should be avoided. Any token generated using an account that doesn't have MFA enabled won't be able to access resources due to the requirement for MFA.
+
+      - question: |
+          How should my application obtain an access token if we enable MFA?
+        answer: |
+          Follow the [Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf) that provides detail on how to do so while complying with the new security requirements. You can find .NET sample code at [Partner Center DotNet Samples - Secure App Model](http://github.com/microsoft/Partner-Center-DotNet-Samples/tree/master/secure-app-model) and Java sample code at [Partner Center Java Samples](http://github.com/microsoft/Partner-Center-Java-Samples/tree/master/secure-app-model).
+
+      - question: |
+          As a CPV, do I create an Azure AD application in our CPV tenant or the tenant of the CSP partner?
+        answer: |
+          The CPV must create the Azure Active Directory application in the tenant associated with their enrollment as a CPV.
+
+      - question: |
+          I'm a CSP who is using app-only authentication. Do I need to make any changes?
+        answer: |
+          App-only authentication isn't affected because user credentials aren't used to request an access token. If user credentials are being shared, then control panel vendors (CPVs) must adopt the [Secure Application Model framework](https://assetsprod.microsoft.com/secure-application-model-guide.pdf) and purge any existing partner credentials they have.
+
+      - question: |
+          As a CPV, can I use the app-only authentication style to get access tokens?
+        answer: |
+          No. Control Panel Vendor partners can't utilize the app-only authentication style to request access tokens on the behalf of partner. They should implement the secure application model, which utilizes the app + user authentication style.
+
+  - name: Technical enforcement
+    questions:
+      - question: |
+          What is the activation of security safeguards?
+        answer: |
+          All partners participating in the Cloud Solution Provider (CSP) program, Control Panel Vendors (CPVs), and Advisors should implement the mandatory security requirements to stay compliant.
+
+          To provide more protection, Microsoft began the activation of security safeguards that helps partners secure their tenants and their customers by mandating multifactor authentication (MFA) verification to prevent unauthorized access.
+
+          We successfully completed the activation for admin-on-behalf-of (AOBO) capabilities to all partner tenants. To further help protect partners and customers, we'll begin the activation for Partner Center transactions in CSP, helping partners protect their businesses and customers from identity-theft related incidents.
+
+          For more information, see [Mandating Multifactor Authentication (MFA) for your partner tenant](partner-security-requirements-mandating-mfa.md) page.
+
+      - question: |
+          I'm using a third-party MFA solution and I'm being blocked. What should I do?
+        answer: |
+          To validate that the account accessing resources was challenged for multifactor authentication, we check the [authentication method reference](https://tools.ietf.org/html/rfc8176) claim to see if MFA is listed. Some third-party solutions don't issue this claim or don't include the MFA value. If the claim is missing, or if the MFA value isn't listed, there isn't a way to determine whether the authenticated account was challenged for multifactor authentication. You'll need to work with the vendor for your third-party solution to determine which actions to take so the solution will issue the authentication method reference claim.
+
+          If you're unsure whether your third-party solution is issuing the expected claim or not, see [Testing the Partner Security Requirements](/powershell/partnercenter/test-partner-security-requirements).
+
+      - question: |
+          MFA is blocking me from supporting my customer using AOBO. What should I do?
+        answer: |
+          The technical enforcement for the partner security requirements is checked if the authenticated account has been challenged for multifactor authentication. If the account hasn't been checked, you'll be redirected to the sign-in page and prompted to authenticate again.
+          
+          For more experience and guidance, see [Mandating Multifactor Authentication (MFA) for your partner tenant](partner-security-requirements-mandating-mfa.md#partner-delegated-administration).
+          
+          In a scenario in which your domain isn't federated, after successfully authenticating, you'll be prompted to set up multifactor authentication. After that is completed, you'll be able to manage your customers using AOBO. In a scenario in which your domain is federated, you'll need to ensure the account is being challenged for multifactor authentication.
+
+  - name: Security defaults transition
+    questions:
+      - question: |
+          How can I transition from baseline policies to security defaults or other MFA solutions?
+        answer: |
+          Azure Active Directory (Azure AD) ["baseline" policies are being removed and replaced](/azure/active-directory/fundamentals/whats-new#replacement-of-baseline-policies-with-security-defaults) with "security defaults," a more comprehensive set of protection policies for you and your customers. [Security defaults](/azure/active-directory/fundamentals/concept-fundamentals-security-defaults) can help protect your organization from identity-theft related security attacks.
+
+          Your multifactor authentication (MFA) implementation will be removed due to the baseline policies retirement if you haven't transitioned from baseline policies to the security defaults policy or [other MFA implementation options](partner-security-requirements.md#implementing-multifactor-authentication). Any users in your partner tenants performing MFA protected operations will be requested to complete MFA verification. For more detailed guidance, see [Mandating multifactor authentication for your partner tenant](partner-security-requirements-mandating-mfa.md).
+          
+          To stay compliant and minimize disruptions, use the following steps:
+
+          - Transition to security defaults
+              - Security defaults policy is one of the options that partners can choose to implement MFA. It offers a basic level of security enabled at no extra cost.
+              - Learn how to enable MFA for your organization with Azure AD, and review the [security defaults key considerations](partner-security-requirements.md#security-defaults).
+              - Enable security defaults policy if it meets your business needs.
+          - Transition to Conditional Access
+              - If security defaults policy doesn't serve your needs, enable Conditional Access. For more information, review the Azure AD Conditional Access documentation.
+
+  - name: Key resources
+    questions:
+      - question: |
+          How do I get started?
+        answer: |
+          - View [Partner security requirements: step-by-step guide](partner-security-requirements.md).
+          - Direct your questions and feedback to the [Partner Center Security Guidance Group](https://aka.ms/MPCSecurityGuidance).
+          - Attend upcoming partner office hours and webinars. Check the [detailed schedule and resources here](https://www.microsoftpartnercommunity.com/t5/Partner-Center-Security-Guidance/ct-p/partner-center-security-guidance).
+
+      - question: |
+          What are resources for adopting the secure application model?
+        answer: |
+          - [Secure Application Model overview](/partner-center/develop/enable-secure-app-model)
+          - [Partner Center: Secure Application Model guide](https://assetsprod.microsoft.com/secure-application-model-guide.pdf)
+          - [Partners in CSP program: .NET sample code for enabling Secure Application Model](/samples/microsoft/partner-center-dotnet-samples/secure-app-model/)
+          - [Partners in CSP program: Java sample code for enabling Secure Application Model](/samples/microsoft/partner-center-java-samples/secure-app-model/)
+          - [Partner Center authentication document](/partner-center/develop/partner-center-authentication)
+          - [Partner Center PowerShell Multifactor Authentication (MFA) document](/powershell/partnercenter/multi-factor-auth)
+
+  - name: Support
+    questions:
+      - question: |
+          Where can I get support?
+        answer: |
+          For support resources to meet the security requirements:
+          
+          - If you have Advanced Support for Partners (ASfP), contact your Service Account Manager.
+          - For Premier Support for Partners agreement (PSfP), contact your Service Account Manager and Technical Account Manager.
+
+      - question: |
+          How do I get technical information and support to help me adopt the secure application model framework?
+        answer: |
+          Technical product support options for Azure Active Directory are available through your Microsoft AI Cloud Partner Program benefits. Partners with access to an active ASfP or PSfP subscription can work with their associated account manager (SAM/TAM) to understand the best options available to them.
+
+      - question: |
+          How do I contact support if I've lost access to Partner Center?
+        answer: |
+          If you lose access due to an MFA issue, contact the Global admin for your tenant. Your internal IT department can tell you who your Global admin is.
+
+          If you forgot your password, see [Unable to sign in](unable-to-sign-in.md) for help.
+
+      - question: |
+          Where can I find more information about common technical issues?
+        answer: |
+          Information regarding the common technical issues can be found in [Partner security requirements for partners using Partner Center or Partner Center APIs](partner-security-requirements.md)

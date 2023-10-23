@@ -1,0 +1,106 @@
+### YamlMime:FAQ
+metadata:
+  title: FAQs about troubleshooting your earnings in Partner Center
+  description: Frequently asked  troubleshooting your earnings in Partner Center
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-earnings
+  ms.topic: faq
+  ms.date: 10/3/2023
+  author: deeparamani
+  ms.author: deramani
+
+title: Troubleshooting earnings in Partner Center Frequently asked questions (FAQ)
+summary: |
+  **Appropriate roles**: Incentives Admin and Incentives User
+
+sections:
+  - name: Troubleshoot your earnings
+    questions:
+      - question: |
+          Why is the customer name missing in my earnings reports?
+        answer: |
+          Global and local campaigns (or anything referred to as Direct Pay model), or any lump sum adjustments usually don't contain reconciliation details like customer name, subscription ID, or invoice number.
+
+          If the lever measures growth (For example, revenue growth for a time duration for the enrolled partner), then it's likely that you'll find customer names along with other transactional details only in the Earnings-Growth report and not in the Earnings-Default report.
+
+          For all other levers, if you see customer names for rest of the earning lines for the same engagement or lever, there's a few possibilities:
+
+          - If reconciliation attributes like customer ID, customer name, subscription ID, or invoice number are missing for only one or two earnings lines, and only in earning details like lever or earning amount, then it most likely is a manual adjustment. Review the reason code attribute in Earnings-Default on why it was performed. Usually these adjustments can't be attributed to a single customer.
+          
+          - If all recently added earning lines (for example, "refer latest calc date") are missing other reconciliation details (and not just customer name) for the engagement/lever, then it's a data latency issue and will most likely be available in 3-5 days.
+
+          - If other reconciliation attributes are available and only customer ID and customer name is missing, most likely it's a brand new subscription and hasn't gone through the invoice process yet. For new subscriptions, customer names for customer ID type =’TPID’ are available only after 45-60 days.
+
+      - question: |
+          What do earning adjustments look like?
+        answer: |
+          Adjustments usually have bare minimum details, for example: enrolled partner information, program/lever and earning amount and reason code. We're unable to provide more details for adjustments as they're intended for any bulk corrections.
+
+      - question: |
+          Why do I not see any earnings for a program/engagement/lever?
+        answer: |
+          If you have never received a single earning yet for a program, first make sure you're showing as Enrolled in the program on the [Incentives - Overview page](https://partner.microsoft.com/dashboard/incentives/enrollment/summary) for the specific partner enrollment ID. Next, make sure you have met partner eligibility criteria. To learn more, see the [Global program guides](https://partner.microsoft.com/partnership/partner-incentives). In general, you'll only receive earnings once you have enrolled and have met partner eligibility criteria.
+
+          **For all programs other than Microsoft Commerce Incentives**:
+
+          If you're enrolled and met partner eligibility criteria, earnings might not be available for one of the following reasons:
+
+          - Customer eligibility hasn't been met.
+
+          - Transaction eligibility hasn't been met. (For example, the minimum revenue threshold hasn't been met, or the product isn't eligible for that lever.)
+
+          - There's no transaction or consumption for the time period.
+
+          > [!NOTE]
+          > Check the cadence for how often earnings and payments are generated in the [Global program guides](https://partner.microsoft.com/partnership/partner-incentives).
+          
+          **For Microsoft commerce incentives**:
+
+          If you're enrolled, you can check if you're eligible for an engagement on the [Incentives - Engagements](https://partner.microsoft.com/dashboard/incentives/engagements/ux/) page – Eligibility section. If you're showing as ineligible, review the details for criteria not met. 
+          
+          In some cases, the ineligibility details aren't outlined. In these cases, refer to the [Incentives - Engagements](https://partner.microsoft.com/dashboard/incentives/engagements/ux/) summary section to review the complete list of partner eligibility criteria or refer to the [Microsoft commerce incentives guide](http://aka.ms/incentivesguide).
+
+          If you're eligible for the engagement, but not yet earning for a lever, it might be due to one of the following reasons:
+
+          - Customer eligibility hasn't been met.
+
+          - Transaction eligibility hasn't been met. (For example, the minimum revenue threshold hasn't been met, or the product isn't eligible for that lever.)
+
+          - There's no transaction or consumption for the time period.
+
+          > [!NOTE]
+          > Note: Use the [Revenue](https://partner.microsoft.com/dashboard/earnings/revenue) page to troubleshoot and understand why specific customers or subscriptions are ineligible. Review currently supported [list of ineligible reason codes](./earnings-revenue.md#ineligibility-reason-codes.md.
+          > Check the cadence for how often earnings and payments are generated in the [Global program guides](https://partner.microsoft.com/partnership/partner-incentives).
+                  
+      - question: |
+          I have stopped receiving earnings in the past few months/weeks for a program/engagement/lever.
+        answer: |
+          Program/engagement/lever refreshes happen every year or at a set cadence for all incentive programs. Make sure the program, engagement or lever you're concerned about is still active and review the program rules. Refer to the summary of policy changes section for [Microsoft commerce incentives](https://aka.ms/partnerincentives).
+
+          If the program or engagement policies have changed or if new policies are introduced, make sure you're showing as enrolled in the main program and that you're listed as eligible against the engagements. Make sure you understand the cadence of when the earnings will first be generated for the program. It's possible that the first earning publish for the new program year might happen on a later date than the usual cadence.
+
+          Other possibilities include:
+
+          - Your relationship with the customer changed, making you ineligible for incentives
+
+          - Transaction/consumption or usage eligibility isn't being met
+
+          > [!NOTE]
+          > Use the [Revenue](https://partner.microsoft.com/dashboard/earnings/revenue) page to troubleshoot and understand why specific customers or subscriptions are ineligible for Microsoft commerce incentives. Review the [list of ineligible reason codes](./earnings-revenue.md#ineligibility-reason-codes). Check the earning/payment generation cadence on the [Global program guides](https://partner.microsoft.com/partnership/partner-incentives).
+
+      - question: |
+          Earnings are incorrect or are less than expected
+        answer: |
+          Make sure you're enrolled and that you're eligible for participating in the engagement. Check the [Revenue](https://partner.microsoft.com/dashboard/earnings/revenue) page to troubleshoot and understand why specific customers or subscriptions are ineligible. Review the [list of ineligible reason codes](./earnings-revenue.md#ineligibility-reason-codes).
+
+          In the Revenue and Usage summary view, you can see the total distinct revenue per customer or distinct usage per customer. Apply solution area/engagement name filters to narrow down and understand the total amount used to compute incentives compared with the total that became ineligible. Because ineligible reporting is limited to the [list of ineligible reason codes](./earnings-revenue.md#ineligibility-reason-codes) that we currently support, it's possible other transactional rules failed and that revenue doesn't show up anywhere on the Revenue page.
+
+          > [!NOTE]
+          > This is applicable only for Microsoft commerce incentives.
+
+additionalContent: |
+
+  ## Next steps
+
+  - For additional help, contact [support](https://partner.microsoft.com/support/)
+  

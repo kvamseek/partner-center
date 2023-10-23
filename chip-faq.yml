@@ -1,0 +1,71 @@
+### YamlMime:FAQ
+metadata:
+  title: Solution Assessment Incentives FAQ
+  ms.topic: faq
+  ms.date: 09/27/2021
+  description: Learn answers to frequently asked questions about Solution Assessment in the Channel Incentives Platform (CHIP).
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-incentives
+  author: Karthic83
+  ms.author: kashanum
+
+title: Solution Assessment incentives FAQ for the Channel Incentives Platform (CHIP)
+summary: |
+  **Appropriate roles**: Primary contact or program admin
+
+  Find answers to frequently asked questions below.
+
+
+sections:
+  - name: Ignored
+    questions:
+      - question: |
+          What are the eligibility requirements for the Solution Assessment Incentive program?
+        answer: |
+          Partners with active and enrolled status in the Solution Assessment Incentive Program in FY22 will continue to be eligible for incentives in FY23 if they have an active Microsoft AI Cloud Partner Program membership and an active Silver or Gold Microsoft AI Cloud Partner Program Competency. Partner qualifications are reviewed for eligibility annually.  If established partners don't accomplish eligibility and participation requirements in the current year, they are removed in the next annual review.  All new partners are onboarded through the local Solution Assessment Specialist (SAS) in their area.  The SAS identifies the partners to be onboarded based on the matching of skills and expertise in the partner company and the business needs of the subsidiaries supported by the SAS.
+          Prior to starting the onboarding process, partners need to discuss with the SAS the capabilities their company has in supporting assessments in their localities.
+
+          Partners currently not enrolled in the incentive program must meet the following FY21 incentive criteria to be eligible for Solution Assessment Incentive onboarding. For details read [Solution Assessment eligibility](chip-solutions-assessment-eligible.md).
+
+      - question: |
+          How do I enroll in the Solution Assessments Incentive program?
+        answer: |
+          Contact your local Solution Assessment Specialist (SAS) to initiate the process.
+
+      - question: |
+          My deal status has been approved in CHIP. Why hasn't it been paid yet?
+        answer: |
+          In addition to the deal status, the POE status must also be approved in CHIP before the opportunity can be submitted for payment. Review your opportunity in CHIP to ensure that POE has been uploaded and approved by POE Validation Team in CHIP. To view the POE status, sign in to CHIP and select **Search Deals** from the **I Need To…** menu. Enter the **opportunity ID** and select **Search**. In the search results, select the ‘Edit' hyperlink under POE. In the resulting page, scroll to the ‘Review' section to see the POE status. Also review the ‘Comments' field in case the POE Team has requested additional information on the POE.
+
+      - question: |
+          Why did I not receive any payment for Milestone 1 for my opportunity?
+        answer: |
+          Starting August 15, 2020, Milestone 1 is paid at 0% of the approved incentive level and Milestone 2 paid out at 100% of the incentive level approved. All open CHIP registered engagements prior to August 15, 2020 will continue to be paid under the FY20 guidance. Review the [Partner FAQ](https://assetsprod.microsoft.com/solution-assessment-incentive-program-faq.pdf) for guidance on the changes in Milestone process.
+
+      - question: |
+          How to I dispute an opportunity or payment I received?
+        answer: |
+          Reach out to your SAS who can provide guidance with this request.
+
+      - question: |
+          The opportunity is closed in CHIP, which is preventing me from uploading POE. What can I do to get the opportunity paid?
+        answer: |
+          Once an opportunity is closed, it's no longer eligible for incentives. Reach out to your SAS for further guidance.
+
+      - question: |
+          How do I check my access to CHIP application?
+        answer: |
+          Refer to [Incentive user permissions](chip-check-access.md).
+
+      - question: |
+          How do I create a support ticket?
+        answer: |
+          From the Partner Center, select **Help + support**. If not using the Workspaces view, select **Support** in the left menu. Select **Incentives** as your category or search your program name in the "Browse Topics" area.
+
+          After viewing the available topic-specific help, if you still need assistance, you can create a ticket right from the Recommended Documents – **Create a support ticket** option.
+
+additionalContent: |
+
+  ## Next steps
+
+  - [Navigate CHIP](chip-intro.md)

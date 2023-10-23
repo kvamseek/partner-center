@@ -1,0 +1,455 @@
+---
+title: Get invoice unbilled commercial consumption line items
+description: You can get a collection of unbilled commercial consumption line item details for a specified invoice using the Partner Center APIs.
+ms.date: 6/7/2022
+ms.service: partner-dashboard
+ms.subservice: partnercenter-api
+ms.topic: article
+author: sourishdeb
+ms.author: sodeb
+---
+
+# Get invoice unbilled commercial consumption line items
+
+How to get a collection of unbilled commercial consumption line item details.
+
+You can use the following methods to get a collection of details unbilled commercial consumption line items (also known as open usage line items) programmatically.
+
+> [!NOTE]
+>Generally, daily rated unbilled usage data is available via API or the Partner Center portal after 24 hours. Depending on your location and when the meters report usage, additional delays may occur.
+>
+>Sometimes, you might not see the most recent unbilled usage data from the beginning of the month until the previous month’s billed usage data is delivered. This is to make sure the billed usage data is delivered efficiently within the SLA. Once you receive the billed usage data, you can start retrieving all the updated unbilled usage data from the beginning of the month.
+>
+
+## Prerequisites
+
+- Credentials as described in [Partner Center authentication](partner-center-authentication.md). This scenario supports authentication with both standalone App and App+User credentials.
+
+## C\#
+
+To get the line items for the specified invoice:
+
+1. Call the [**ById**](/dotnet/api/microsoft.store.partnercenter.invoices.iinvoicecollection.byid) method to get an interface to invoice operations for the specified invoice.
+
+2. Call the [**Get**](/dotnet/api/microsoft.store.partnercenter.invoices.iinvoice.get) or [**GetAsync**](/dotnet/api/microsoft.store.partnercenter.invoices.iinvoice.getasync) method to retrieve the invoice object.
+
+The **invoice object** contains all of the information for the specified invoice. The **Provider** identifies the source of the unbilled detail information (for example, **OneTime**). The **InvoiceLineItemType** specifies the type (for example, **UsageLineItem**).
+
+The following example code uses a **foreach** loop to process the **InvoiceLineItems** collection. A separate collection of line items is retrieved for each **InvoiceLineItemType**.
+
+To get a collection of line items that correspond to an **InvoiceDetail** instance:
+
+1. Pass the instance's **BillingProvider** and **InvoiceLineItemType** to the [**By**](/dotnet/api/microsoft.store.partnercenter.invoices.iinvoice.by) method.
+
+2. Call the [**Get**](/dotnet/api/microsoft.store.partnercenter.invoices.iinvoice.get) or [**GetAsync**](/dotnet/api/microsoft.store.partnercenter.invoices.iinvoice.getasync) method to retrieve the associated line items.
+3. Create an enumerator to traverse the collection as shown in the following example.
+
+``` csharp
+// IAggregatePartner partnerOperations;
+// string curencyCode;
+// string period;
+// int pageMaxSizeReconLineItems = 2000;
+
+// all the operations executed on this partner operation instance will share the same correlation Id but will differ in request Id
+IPartner scopedPartnerOperations = partnerOperations.With(RequestContextFactory.Instance.Create(Guid.NewGuid()));
+
+var seekBasedResourceCollection = scopedPartnerOperations.Invoices.ById("unbilled").By("onetime", "usagelineitems", curencyCode, period, pageMaxSizeReconLineItems).Get();
+
+var fetchNext = true;
+
+ConsoleKeyInfo keyInfo;
+
+var itemNumber = 1;
+while (fetchNext)
+{
+    Console.Out.WriteLine("\tLine items count: " + seekBasedResourceCollection.Items.Count());
+
+    seekBasedResourceCollection.Items.ToList().ForEach(item =>
+    {
+        // Instance of type DailyRatedUsageLineItem
+        if (item is DailyRatedUsageLineItem)
+        {
+            Type t = typeof(DailyRatedUsageLineItem);
+            PropertyInfo[] properties = t.GetProperties();
+
+            foreach (PropertyInfo property in properties)
+            {
+                // Insert code here to work with the line item properties
+            }
+        }
+        itemNumber++;
+    });
+
+    Console.Out.WriteLine("\tPress any key to fetch next data. Press the Escape (Esc) key to quit: \n");
+    keyInfo = Console.ReadKey();
+
+    if (keyInfo.Key == ConsoleKey.Escape)
+    {
+        break;
+    }
+
+    fetchNext = !string.IsNullOrWhiteSpace(seekBasedResourceCollection.ContinuationToken);
+
+    if (fetchNext)
+    {
+        if (seekBasedResourceCollection.Links.Next.Headers != null && seekBasedResourceCollection.Links.Next.Headers.Any())
+        {
+            seekBasedResourceCollection = scopedPartnerOperations.Invoices.ById("unbilled").By("onetime", "usagelineitems", curencyCode, period, pageMaxSizeReconLineItems).Seek(seekBasedResourceCollection.ContinuationToken, SeekOperation.Next);
+        }
+    }
+}
+```
+
+For a similar example, see:
+
+- Sample: [Console test app](console-test-app.md)
+- Project: **Partner Center SDK Samples**
+- Class: **GetUnBilledConsumptionReconLineItemsPaging.cs**
+
+## REST request
+
+### Request syntax
+
+You can use the following syntaxes for your REST request, depending on your use case. For more information, see the descriptions for each syntax.
+
+| Method  | Request URI                                                                                                                                                                                              | Description of syntax use case                                                                                                     |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| **GET** | [*{baseURL}*](partner-center-rest-urls.md)/v1/invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode={currencycode}&period={period} HTTP/1.1                       | Use this syntax to return a full list of every line item for the given invoice.                                                    |
+| **GET** | [*{baseURL}*](partner-center-rest-urls.md)/v1/invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode={currencycode}&period={period}&size={size} HTTP/1.1           | Use this syntax for large invoices. Use this syntax with a specified size and 0-based offset to return a paged list of line items. |
+| **GET** | [*{baseURL}*](partner-center-rest-urls.md)/v1/invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode={currencycode}&period={period}&size={size}&seekOperation=Next | Use this syntax to get the next page of reconciliation line items using `seekOperation = "Next"`.                                  |
+
+#### URI parameters
+
+Use the following URI and query parameters when creating the request.
+
+| Name                   | Type   | Required | Description                                                                                                                                                                                                                                |
+|------------------------|--------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| provider               | string | Yes      | The provider: "**OneTime**".                                                                                                                                                                                                               |
+| invoice-line-item-type | string | Yes      | The type of invoice detail: "**UsageLineItems**", "**UsageLineItems**".                                                                                                                                                                    |
+| currencyCode           | string | Yes      | The currency code for the unbilled line items.                                                                                                                                                                                             |
+| period                 | string | Yes      | The period for unbilled recon (for example: **current**, **previous**). Suppose you need to query your unbilled usage data of the billing cycle (01/01/2020 – 01/31/2020) in January, choose period as **"Current,"** else **"Previous."** |
+| size                   | number | No       | The maximum number of items to return. The default size is 2000.                                                                                                                                                                           |
+| seekOperation          | string | No       | Set `seekOperation=Next` to get the next page of reconciliation line items.                                                                                                                                                                |
+
+### Request headers
+
+For more information, see [Partner Center REST headers](headers.md).
+
+### Request body
+
+None.
+
+## REST response
+
+If successful, the response contains the collection of line item details.
+
+*For the line item **ChargeType**, the value **Purchase** is mapped to **New** and the value **Refund** is mapped to **Cancel**.*
+
+### Response success and error codes
+
+Each response comes with an HTTP status code that indicates success or failure and additional debugging information. Use a network trace tool to read this code, error type, and additional parameters. For the full list, see [Partner Center REST error codes](error-codes.md).
+
+## Request-response examples
+
+### Request-response example 1
+
+The following details apply to this example:
+
+- **Provider**: **OneTime**
+- **InvoiceLineItemType**: **UsageLineItems**
+- **Period**: **Previous**
+
+#### Request example 1
+
+```http
+GET https://api.partnercenter.microsoft.com/v1//invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode=usd&period=previous&size=2000 HTTP/1.1
+Authorization: Bearer <token>
+Accept: application/json
+MS-RequestId: 1234ecb8-37af-45f4-a1a1-358de3ca2b9e
+MS-CorrelationId: 5e612512-4345-4bb0-866e-47aeda031234
+X-Locale: en-US
+MS-PartnerCenter-Application: Partner Center .NET SDK Samples
+Host: api.partnercenter.microsoft.com
+```
+
+> [!IMPORTANT]
+> As of June 2023, the latest Partner Center .NET SDK release 3.4.0 is now archived. You can [download the SDK release from GitHub](https://github.com/microsoft/partner-center-sdk-for-dotNET), along with a [readme file](https://github.com/microsoft/partner-center-sdk-for-dotNET#readme) that contains useful information.
+>
+> Partners are encouraged to continue to use the [Partner Center REST APIs](partner-center-rest-api-reference.md).
+
+### Response example 1
+
+```http
+HTTP/1.1 200 OK
+Content-Length: 2484
+Content-Type: application/json; charset=utf-8
+MS-CorrelationId: 5e612512-4345-4bb0-866e-47aeda031234
+MS-RequestId: 1234ecb8-37af-45f4-a1a1-358de3ca2b9e
+MS-CV: bpqyomePDUqrSSYC.0
+MS-ServerId: 202010406
+Date: Wed, 20 Feb 2019 19:59:27 GMT
+
+{
+    "totalCount": 2,
+    "items": [
+        {
+            "partnerId": "00083575-bbd0-54de-b2ad-0f5b0e927d71",
+            "partnerName": "MTBC",
+            "customerId": "",
+            "customerName": "",
+            "customerDomainName": "",
+            "invoiceNumber": "",
+            "productId": "",
+            "skuId": "",
+            "availabilityId": "",
+            "skuName": "VM-Series Next-Generation Firewall (Bundle 2 PAYG)",
+            "productName": "VM-Series Next Generation Firewall",
+            "publisherName": "Test Alto Networks, Inc.",
+            "publisherId": "",
+            "subscriptionId": "12345678-04d9-421c-baf8-e3b8dd62ddba",
+            "subscriptionDescription": "Pay-As-You-Go",
+            "chargeStartDate": "2019-01-01T00:00:00Z",
+            "chargeEndDate": "2019-02-01T00:00:00Z",
+            "usageDate": "2019-01-01T00:00:00Z",
+            "meterType": "1 Compute Hour - 4core",
+            "meterCategory": "Virtual Machine Licenses",
+            "meterId": "4core",
+            "meterSubCategory": "VM-Series Next Generation Firewall",
+            "meterName": "VM-Series Next Generation Firewall - VM-Series Next-Generation Firewall (Bundle 2 PAYG) - 4 Core Hours",
+            "meterRegion": "",
+            "unitOfMeasure": "1 Hour",
+            "resourceLocation": "EASTUS",
+            "consumedService": "Microsoft.Compute",
+            "resourceGroup": "ECH-PAN-RG",
+            "resourceUri": "/subscriptions/12345678-04d9-421c-baf8-e3b8dd62ddba/resourceGroups/ECH-PAN-RG/providers/Microsoft.Compute/virtualMachines/echpanfw",
+            "tags": "",
+            "additionalInfo": "{  \"ImageType\": null,  \"ServiceType\": \"Standard_D3_v2\",  \"VMName\": null,  \"VMProperties\": null,  \"UsageType\": \"ComputeHR_SW\"}",
+            "serviceInfo1": "",
+            "serviceInfo2": "",
+            "customerCountry": "",
+            "mpnId": "1234567",
+            "resellerMpnId": "",
+            "chargeType": "",
+            "unitPrice": 1.2799888920023,
+            "quantity": 24.0,
+            "unitType": "",
+            "billingPreTaxTotal": 30.7197334080551,
+            "billingCurrency": "USD",
+            "pricingPreTaxTotal": 30.7197334080551,
+            "pricingCurrency": "USD",
+            "entitlementId": "3f47bcf1-965d-40a1-a2bc-3d5db3653250",
+            "entitlementDescription": "Partner Subscription",
+            "pcToBCExchangeRate": 1,
+            "pcToBCExchangeRateDate": "2019-08-01T00:00:00Z",
+            "effectiveUnitPrice": 0,
+            "rateOfPartnerEarnedCredit": 0,
+            "rateOfCredit": 0,
+            "creditType": "Credit Not Applied",
+            "invoiceLineItemType": "usage_line_items",
+            "billingProvider": "marketplace",
+	    "benefitOrderId": "5ea053d6-4a0d-46ef-bc82-15065b475d01",
+	    "benefitId": "28ddab06-2c5b-479e-88bb-7b7bfda4e7fd",
+	    "benefitType": "SavingsPlan",
+            "attributes": {
+                "objectType": "DailyRatedUsageLineItem"
+            }
+         },
+         {
+            "partnerId": "00083575-bbd0-54de-b2ad-0f5b0e927d71",
+            "partnerName": "MTBC",
+            "customerId": "",
+            "customerName": "",
+            "customerDomainName": "",
+            "invoiceNumber": "",
+            "productId": "",
+            "skuId": "",
+            "availabilityId": "",
+            "skuName": "VM-Series Next-Generation Firewall (Bundle 2 PAYG)",
+            "productName": "VM-Series Next Generation Firewall",
+            "publisherName": "Test Alto Networks, Inc.",
+            "publisherId": "",
+            "subscriptionId": "12345678-04d9-421c-baf8-e3b8dd62ddba",
+            "subscriptionDescription": "Pay-As-You-Go",
+            "chargeStartDate": "2019-01-01T00:00:00Z",
+            "chargeEndDate": "2019-02-01T00:00:00Z",
+            "usageDate": "2019-01-02T00:00:00Z",
+            "meterType": "1 Compute Hour - 4core",
+            "meterCategory": "Virtual Machine Licenses",
+            "meterId": "4core",
+            "meterSubCategory": "VM-Series Next Generation Firewall",
+            "meterName": "VM-Series Next Generation Firewall - VM-Series Next-Generation Firewall (Bundle 2 PAYG) - 4 Core Hours",
+            "meterRegion": "",
+            "unitOfMeasure": "1 Hour",
+            "resourceLocation": "EASTUS",
+            "consumedService": "Microsoft.Compute",
+            "resourceGroup": "ECH-PAN-RG",
+            "resourceUri": "/subscriptions/12345678-04d9-421c-baf8-e3b8dd62ddba/resourceGroups/ECH-PAN-RG/providers/Microsoft.Compute/virtualMachines/echpanfw",
+            "tags": "",
+            "additionalInfo": "{  \"ImageType\": null,  \"ServiceType\": \"Standard_D3_v2\",  \"VMName\": null,  \"VMProperties\": null,  \"UsageType\": \"ComputeHR_SW\"}",
+            "serviceInfo1": "",
+            "serviceInfo2": "",
+            "customerCountry": "",
+            "mpnId": "1234567",
+            "resellerMpnId": "",
+            "chargeType": "",
+            "unitPrice": 1.2799888920023,
+            "quantity": 24.0,
+            "unitType": "",
+            "billingPreTaxTotal": 30.7197334080551,
+            "billingCurrency": "USD",
+            "pricingPreTaxTotal": 30.7197334080551,
+            "pricingCurrency": "USD",
+            "entitlementId": "31cdf47f-b249-4edd-9319-637862d12345",
+            "entitlementDescription": "Partner Subscription",
+            "pcToBCExchangeRate": 1,
+            "pcToBCExchangeRateDate": "2019-08-01T00:00:00Z",
+            "effectiveUnitPrice": 0,
+            "rateOfPartnerEarnedCredit": 0,
+            "rateOfCredit": 1,
+            "creditType": "Azure Credit Applied",
+            "invoiceLineItemTypce": "usage_line_items",
+            "billingProvider": "marketplace",
+	    "benefitOrderId": "",
+            "benefitId": "",
+            "benefitType": "Charge",
+            "attributes": {
+                "objectType": "DailyRatedUsageLineItem"
+            }
+        }
+    ],
+    "links": {
+        "self": {
+            "uri": "/invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode=usd&period=previous&size=2000",
+            "method": "GET",
+            "headers": []
+        },
+        "next": {
+            "uri": "/invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode=usd&period=previous&size=2000&seekOperation=Next",
+            "method": "GET",
+            "headers": [
+                {
+                    "key": "MS-ContinuationToken",
+                    "value": "AQAAAA=="
+                }
+            ]
+        }
+    },
+    "attributes": {
+        "objectType": "Collection"
+    }
+}
+```
+
+### Request-response example 2
+
+The following details apply to this example:
+
+- **Provider**: **OneTime**
+- **InvoiceLineItemType**: **UsageLineItems**
+- **Period**: **Previous**
+- **SeekOperation**: **Next**
+
+#### Request example 2
+
+```http
+GET https://api.partnercenter.microsoft.com/v1/invoices/unbilled/lineitems?provider=onetime&invoiceLineItemType=usagelineitems&currencyCode=usd&period=previous&size=2000&seekoperation=next HTTP/1.1
+Authorization: Bearer <token>
+Accept: application/json
+MS-ContinuationToken: d19617b8-fbe5-4684-a5d8-0230972fb0cf,0705c4a9-39f7-4261-ba6d-53e24a9ce47d_a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=,0d81c700-98b4-4b13-9129-ffd5620f72e7
+MS-RequestId: 1234ecb8-37af-45f4-a1a1-358de3ca2b9e
+MS-CorrelationId: 5e612512-4345-4bb0-866e-47aeda031234
+X-Locale: en-US
+MS-PartnerCenter-Application: Partner Center .NET SDK Samples
+Host: api.partnercenter.microsoft.com
+```
+
+#### Response example 2
+
+```http
+HTTP/1.1 200 OK
+Content-Length: 2484
+Content-Type: application/json; charset=utf-8
+MS-CorrelationId: 5e612512-4345-4bb0-866e-47aeda031234
+MS-RequestId: 1234ecb8-37af-45f4-a1a1-358de3ca2b9e
+MS-CV: bpqyomePDUqrSSYC.0
+MS-ServerId: 202010406
+Date: Wed, 20 Feb 2019 19:59:27 GMT
+
+{
+    "totalCount": 1,
+    "items": [
+        {
+            "partnerId": "00083575-bbd0-54de-b2ad-0f5b0e927d71",
+            "partnerName": "MTBC",
+            "customerId": "",
+            "customerName": "",
+            "customerDomainName": "",
+            "invoiceNumber": "",
+            "productId": "",
+            "skuId": "",
+            "availabilityId": "",
+            "skuName": "VM-Series Next-Generation Firewall (Bundle 2 PAYG)",
+            "productName": "VM-Series Next Generation Firewall",
+            "publisherName": "Test Alto Networks, Inc.",
+            "publisherId": "",
+            "subscriptionId": "12345678-04d9-421c-baf8-e3b8dd62ddba",
+            "subscriptionDescription": "Pay-As-You-Go",
+            "chargeStartDate": "2019-01-01T00:00:00Z",
+            "chargeEndDate": "2019-02-01T00:00:00Z",
+            "usageDate": "2019-01-02T00:00:00Z",
+            "meterType": "1 Compute Hour - 4core",
+            "meterCategory": "Virtual Machine Licenses",
+            "meterId": "4core",
+            "meterSubCategory": "VM-Series Next Generation Firewall",
+            "meterName": "VM-Series Next Generation Firewall - VM-Series Next-Generation Firewall (Bundle 2 PAYG) - 4 Core Hours",
+            "meterRegion": "",
+            "unitOfMeasure": "1 Hour",
+            "resourceLocation": "EASTUS",
+            "consumedService": "Microsoft.Compute",
+            "resourceGroup": "ECH-PAN-RG",
+            "resourceUri": "/subscriptions/12345678-04d9-421c-baf8-e3b8dd62ddba/resourceGroups/ECH-PAN-RG/providers/Microsoft.Compute/virtualMachines/echpanfw",
+            "tags": "",
+            "additionalInfo": "{  \"ImageType\": null,  \"ServiceType\": \"Standard_D3_v2\",  \"VMName\": null,  \"VMProperties\": null,  \"UsageType\": \"ComputeHR_SW\"}",
+            "serviceInfo1": "",
+            "serviceInfo2": "",
+            "customerCountry": "",
+            "mpnId": "1234567",
+            "resellerMpnId": "",
+            "chargeType": "",
+            "unitPrice": 1.2799888920023,
+            "quantity": 24.0,
+            "unitType": "",
+            "billingPreTaxTotal": 30.7197334080551,
+            "billingCurrency": "USD",
+            "pricingPreTaxTotal": 30.7197334080551,
+            "pricingCurrency": "USD",
+            "entitlementId": "31cdf47f-b249-4edd-9319-637862d8c0b4",
+            "entitlementDescription": "Partner Subscription",
+            "pcToBCExchangeRate": 1,
+            "pcToBCExchangeRateDate": "2019-08-01T00:00:00Z",
+            "effectiveUnitPrice": 0,
+            "rateOfPartnerEarnedCredit": 0.15,
+            "rateOfCredit": 0.15,
+            "creditType": "Partner Earned Credit Applied",
+            "invoiceLineItemType": "usage_line_items",
+            "billingProvider": "marketplace",
+	    "benefitOrderId": "",
+            "benefitId": "",
+            "benefitType": "Charge",
+            "attributes": {
+                "objectType": "DailyRatedUsageLineItem"
+            }
+        }
+    ],
+    "links": {
+        "self": {
+             "uri": "/invoices/unbilled/lineitems?provider=onetime&invoicelineitemtype=usagelineitems&currencycode=usd&period=previous&size=2000",
+            "method": "GET",
+            "headers": []
+        }
+    },
+    "attributes": {
+        "objectType": "Collection"
+    }
+}
+```

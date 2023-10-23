@@ -1,0 +1,77 @@
+### YamlMime:FAQ
+metadata:
+  title: FAQs about troubleshooting your payments in Partner Center
+  description: Troubleshooting payments in Partner Center - frequently asked questions (FAQ)
+  ms.service: partner-dashboard
+  ms.subservice: partnercenter-earnings
+  ms.topic: faq
+  ms.date: 10/3/2023
+  author: deeparamani
+  ms.author: deramani
+
+
+title: Troubleshooting payments in Partner Center - frequently asked questions (FAQ)
+summary: |
+  **Appropriate roles**: Incentives Admin and Incentives User
+
+sections:
+  - name: Troubleshoot your earnings
+    questions:
+      - question: |
+          I'm sure we have earnings. When will I be paid?
+        answer: |
+          If you have recently enrolled in this incentive program, and you're awaiting your first payment, make sure you're showing as **Enrolled** on the [Incentives - Overview page](https://partner.microsoft.com/dashboard/incentives/enrollment/summary) against the specific program. If you aren't showing as enrolled, follow the steps outlined in [How to enroll for incentives with valid bank and tax profile](./incentives-enroll.md). Some regions require tax invoice submission before payment is processed.
+          
+          If you have been receiving payments but recently stopped receiving them, make sure all pending actions related to banks and tax updates are fulfilled. Check the **Action required** section of the [Incentives - Overview page](https://partner.microsoft.com/dashboard/incentives/enrollment/summary).
+          
+          If you're enrolled and have up-to-date bank and tax profiles (in other words, no actions are required), then check if the total accumulated earnings are over $200, because payments are not processed until the minimum threshold of $200 is met for the program/earning type. To check your earning balance, see the [Earnings page](https://partner.microsoft.com/dashboard/earnings/earnings), select the enrollment ID, program and earning type (For example: rebate or co-op) as filters and check the total. If it's less than $200, it will be paid in the subsequent months after it reaches $200.
+          
+          To summarize: Incentive earning payments are made only to partners that have completed all incentive payment requirements. Payment requirements include partners maintaining complete tax forms and bank account information in their Partner Center incentive payment profile for each enrolled Partner Location ID. Payment requirements apply to all available incentive payment profiles. 
+          
+          Should a partner fail to maintain accurate and complete payment profile information, or fail to complete tax invoice documentation submission requirements, Microsoft updates the partner’s payment profile status in Partner Center to indicate that an action is required of the partner, and holds the incentive payment for 180 days. After 180 days, partners will forfeit their incentive earnings if the required bank or tax documentation has still not been provided.
+          
+          For regions with invoice submission requirements, partners are notified that tax invoice submission is required in order to claim their incentive earnings. During each payment cycle, instructions are communicated that include information required on the invoice. 
+          
+          Microsoft holds incentive payments until a partner submits a partner invoice to Microsoft, which acts as an incentive claim. Once the partner invoice is received, Microsoft validates the information provided prior to processing a partner’s incentive earning payment.
+
+      - question: |
+          I received a payment in the bank but I don't know what it's for.
+        answer: |
+          When payments come through to your bank, a reference number is provided. Use the reference number to filter for the Payment ID on the [Earnings page](https://partner.microsoft.com/dashboard/earnings/earnings). If the payment was made within the last three years and was for a program paid through Partner Center, the details will show up.
+          
+          If the payment is recent and payment doesn't show up immediately in Partner Center, give it another 24-48 hours before reverifying.
+
+      - question: |
+          Why do the earnings and payments on the totals cards not match?
+        answer: |
+          If the payment cadence is monthly, quarterly, or greater, then the earnings for a month may be paid in the following month or later.
+
+      - question: |
+          I see the payment ID in the Payment Summary section, but when I try to view or download the corresponding earnings, all earning details are blank, or transactional details like customer name or subscription ID are missing.
+        answer: |
+          When a payment is dispatched, there could be a delay in how soon the payment is linked with earnings and shown on reports. A delay of 48 to 72 hours is expected for all earnings to show up against the payments.
+
+      - question: |
+          When can I expect to receive payments? The estimated payment doesn't seem to be accurate.
+        answer: |
+          It depends on the payment cycle. For example, for a monthly payment cycle, if the transaction, consumption, or usage occurred in June 2023, and earnings were generated in July 2023, then the payments would appear in August 2023.
+          
+          If an earning is generated on-time (within 45-55 days of a transaction, consumption or usage), and if the partner has completed all payment requirements (example: the bank/tax profile is complete, they're enrolled, and the tax invoice is complete (only required for selected regions), and the amount is above the minimum threshold, then the payment will most likely be sent during the upcoming payment cycle.
+          
+          Known issue: When earnings are generated late, they may appear in a different month. For example, if the earnings were generated in October 2023 instead of July 2023, the estimated payment would show as August 2023 instead of November 2023.
+
+      - question: |
+          I don't see any reconciliation details for payments with earning type ‘Claim’.
+        answer: |
+          **Basics of co-op/claim:** When commerce transactions occur, partners earn co-op for the defined earning period. These earnings are put into the co-op funds pool. When the usage period activates, partners can choose from an approved list of activities and claim money from the co-op funds pool with proof of execution. Once the claim is approved, payment is sent to the partner for that claim.
+          
+          For example, in some programs, partners earn co-op in the first six months, but can start claiming only in the next six months.
+          
+          Given that there's no way to trace a claim ID to a particular co-op earning, it isn't feasible to state which claim can be attributed to which customer/subscription/invoice/product. If you wish to understand how co-op earnings came about, choose the earning time period on the [Earnings page](https://partner.microsoft.com/dashboard/earnings/earnings) by applying the engagement, lever and earning type = ‘Coop’ filter. |
+
+additionalContent: |
+
+  ## Next steps
+
+    - For additional help, contact [support](https://partner.microsoft.com/support/)
+  

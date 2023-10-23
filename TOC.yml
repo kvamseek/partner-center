@@ -1,0 +1,1154 @@
+- name: Microsoft Partner Center documentation
+  href: index.yml
+- name: What is Partner Center?
+  href: overview.md
+- name: Get around Partner Center
+  href: get-around-partner-center.md
+
+- name: Announcements
+  href: announcements/TOC.md
+
+- name: Enroll
+  items:
+  - name: Enroll in Partner Center programs
+    href: partner-center-enroll-overview.md
+  - name: Partner Center account
+    items:
+    - name: Create a Partner Center account
+      href: mpn-create-a-partner-center-account.md
+    - name: Account verification
+      items:
+      - name: Verify your account
+        href: verification-responses.md
+      - name: Get verifiable credentials
+        href: get-verifiable-credentials.md
+    - name: Verify domain ownership
+      href: become-global-admin.md
+    - name: Troubleshoot account setup
+      href: troubleshoot-account-sign-n.md
+    - name: Value added tax (VAT) info in Partner Center registration
+      href: vat-info.md
+  - name: Cloud Solution Provider (CSP)
+    items:
+    - name: CSP overview
+      href: csp-overview.md
+    - name: Enroll in the CSP program
+      href: enrolling-in-the-csp-program.md
+    - name: Revenue requirement for CSP indirect resellers
+      href: new-indirect-reseller-requirement.md
+    - name: CSP direct partner requirements
+      href: direct-partner-new-requirements.md
+    - name: Switch CSP direct bill to indirect reseller
+      href: transition-direct-to-indirect.md
+    - name: Indirect reseller tasks
+      href: indirect-reseller-tasks-in-partner-center.md
+    - name: Supported CSP partner relationships
+      href: csp-supported-partner-relationships.md
+    - name: Microsoft Partner Agreement
+      items:
+      - name: CSP agreements
+        href: microsoft-partner-agreement.md
+      - name: How indirect providers can help their resellers adopt the MPA
+        href: mpa-indirect-provider-faq.yml
+      - name: CSP regional markets, currencies
+        href: regional-authorization-overview.md
+      - name: CSP agreements, price lists, offers
+        href: csp-documents-and-learning-resources.md
+    - name: Sell in national clouds
+      items:
+      - name: Introduction to national clouds
+        href: csp-national-clouds-overview.md
+      - name: Partner Center for Microsoft Cloud for US Government
+        href: partner-center-for-microsoft-us-govt-cloud.md
+      - name: FAQs - Microsoft Cloud for US Government
+        href: faq-for-us-govt-cloud.yml
+      - name: Partner Center for Microsoft Cloud Germany
+        href: partner-center-for-microsoft-cloud-germany.md
+      - name: Enroll in CSP for Microsoft Cloud for US Government
+        href: enroll-in-csp-for-microsoft-us-govt-cloud.md
+      - name: Office 365 Government GCC partner and customer eligibility criteria
+        href: csp-gcc-validate.md
+    - name: Partners can no longer enroll as Advisors
+      href: advisors-no-csp.md
+  - name: Enroll as a Control Panel Vendor
+    href: enroll-as-cpv.md
+  - name: Become Global admin
+    href: become-global-admin.md
+  - name: Troubleshoot account setup
+    href: troubleshoot-account-sign-n.md
+  - name: Add Azure AD applications
+    href: service-principal.md
+
+- name: Action Center
+  items:
+  - name: Action Center overview
+    href: action-center-overview.md
+
+- name: Account settings
+  items:
+  - name: Accounts overview
+    href: account-settings-overview.md
+  - name: Partner Center account setup
+    href: partner-center-account-setup.md
+  - name: About the account structure
+    href: account-structure.md
+  - name: Manage your account
+    items:
+    - name: Find your workspaces, roles, and admins
+      href: find-workspaces-roles-admins.md
+    - name: Update your partner profile
+      href: update-your-partner-profile.md
+    - name: Learn about work accounts
+      href: azure-active-directory-tenants-and-partner-center.md
+    - name: Reset your password
+      href: reset-my-pasword.md
+    - name: Troubleshoot sign-in issues
+      href: unable-to-sign-in.md
+    - name: Manage locations
+      href: manage-locations.md
+    - name: Merge partner accounts
+      href: merge-accounts.md
+    - name: Restore a suspended account
+      href: suspended-partner-center-account.md
+    - name: Add more Azure AD tenants
+      href: multi-tenant-account.md
+    - name: Find IDs and domain names
+      href: find-ids-and-domain-names.md
+    - name: Registration ID requirements
+      href: reg-number-id.md
+    - name: Delete partner global or local account
+      href: account-deletion.md
+  - name: Manage users
+    items:
+    - name: Create user accounts
+      href: create-user-accounts-and-set-permissions.md
+    - name: Assign roles, permissions, and workspace access
+      href: permissions-overview.md
+    - name: Compliance admin role
+      href: compliance-admin-role.md
+    - name: Reset a user password
+      href: reset-a-user-password.md
+    - name: Find user's admin
+      href: no-mpn-admin.md
+  - name: Marketplace account management
+    items:
+    - name: General account management
+      items:
+      - name: Create a new Partner Center account
+        href: create-account.md
+      - name: Add new publishers
+        href: add-publishers.md  
+      - name: Manage your account
+        href: manage-account.md
+      - name: Switch accounts
+        href: switch-accounts.md
+      - name: Manage tenants
+        href: manage-tenants.md    
+      - name: Find or create a company work account
+        href: azure-active-directory-tenants-and-partner-center.md
+      - name: Notifying Microsoft
+        href: submit-legal-notice.md
+    - name: Manage users
+      items:
+      - name: Add and manage users
+        href: add-manage-users.md
+      - name: Assign user roles
+        href: user-roles.md  
+      - name: Manage groups
+        href: manage-groups.md
+      - name: Add and manage Azure AD applications
+        href: manage-aad-apps.md
+      - name: Update marketplace owner
+        href: update-marketplace-owner.md
+  - name: Security requirements
+    items:
+    - name: Partner security requirements
+      href: partner-security-requirements.md
+    - name: CSP security contact
+      href: security-contact.md
+    - name: Mandate MFA for your partner tenant
+      href: partner-security-requirements-mandating-mfa.md
+    - name: Set up your users with MFA
+      href: mfa-for-users.md
+    - name: Requirements status
+      href: partner-security-compliance.md
+    - name: Self-service DAP removal
+      href: dap-monitor-self-serve-removal.md
+    - name: Delegated administration privileges (DAP) FAQ
+      href: dap-faq.md
+    - name: CSP security best practices
+      href: csp-security-best-practices.md
+    - name: Customer security best practices
+      href: customer-security-best-practices.md
+    - name: Confirm, contain, and secure compromise
+      href: essential-steps-secure-compromise.md
+    - name: Detect and respond to security alerts
+      href: azure-fraud-notification.md
+    - name: Nonpayment, fraud, or misuse
+      href: non-payment-fraud-misuse.md
+    - name: Partner security FAQ
+      href: partner-security-requirements-faq.yml
+  - name: Social impact
+    items: 
+    - name: Social impact and diversity business classifications and certifications
+      href: diversity-business-classifications-certs.md
+    - name: Classifications and certifications by region
+      items:
+      - name: Australia
+        href: diversity-business-australia.md
+      - name: Canada
+        href: diversity-business-canada.md
+      - name: New Zealand
+        href: diversity-business-nz.md
+      - name: United States
+        href: diversity-business-us.md
+      - name: United Kingdom
+        href: diversity-business-uk.md
+      - name: Additional regions
+        href: diversity-business-additional.md
+      
+- name: Membership
+  items:
+  - name: Membership overview
+    href: mpn-overview.md
+  - name: Prerequisite requirements
+    items:
+    - name: Microsoft AI Cloud Partner Program
+      href: intro-to-cloud-partner-program-membership.md
+  - name: Make a payment
+    items:
+    - name: Make a payment
+      href: make-payment.md
+  - name: Renew your membership
+    href: renew-mpn-offers.md
+  - name: Troubleshoot purchase issues
+    href: troubleshoot-buy-now-disabled.md  
+  - name: Download invoice
+    href: mpn-view-print-maps-invoice.md
+  - name: Cancel your order
+    href: mpn-refund-request.md
+  - name: Make a payment (New Commerce Experience)
+    items:
+    - name: Link billing account and profile to Partner Center account
+      href: link-billing-account-profile-to-partner-center-account.md
+    - name: Add a payment method
+      href: add-payment-method.md
+    - name: Replace a payment method
+      href: replace-payment-method.md
+    - name: Edit or delete a payment method
+      href: edit-delete-payment-method.md
+    - name: Update address and tax details
+      href: update-address-and-tax-details.md
+    - name: Understand the terms of your invoice
+      href: understand-invoice-terms.md
+
+  - name: Programs for Services Partners
+    items:
+    - name: Microsoft Action Pack
+      href: mpn-get-action-pack.md
+    - name: Silver Gold Membership
+      href: silver-gold-membership-competency.md
+      displayName: Silver Gold Competency or membership
+    - name: Solutions Partner
+      items:
+      - name: Solutions Partner designation overview
+        href: introduction-to-pcs.md
+      - name: Score for Solutions Partner designation
+        href: partner-capability-score.md
+      - name: Solutions Partner designation purchase and fees
+        href: mpn-pay-fee-silver-gold-competency.md
+      - name: Solutions Partner for Business Applications
+        href: solutions-partner-business.md
+      - name: Solutions Partner for all Azure areas
+        href: solutions-partner-azure.md
+      - name: Solutions Partner for Security
+        href: solutions-partner-security.md
+      - name: Solutions Partner for Modern Work
+        href: solutions-partner-modern-work.md
+      - name: Solutions Partner FAQ
+        href: solutions-partner-faq.yml 
+    - name: Specializations
+      items:
+      - name: Specializations overview
+        href: specializations.md
+      - name: Apply or check status
+        href: specializations-apply.md
+    - name: Azure Expert MSP
+      href: azure-expert-msp.md
+  - name: Programs for ISV Partners
+    items:
+    - name: ISV Success build and publish
+      href: isv-success.md
+    - name: Marketplace rewards
+      href: marketplace-rewards.md
+  - name: Programs for Training Services
+    items:
+    - name: Enroll as a Microsoft Training Services Partner
+      href: mpn-benefits-map-competency-learning-option-enroll.md
+    - name: Qualification Dashboard Training Service Partner
+      href: qualification-dashboard-training-service-partner.md
+  - name: Programs for Surface Partners
+    items:
+    - name: Surface Reseller Alliance program
+      href: surface-partner-overview.md
+  - name: Merge accounts
+    href: csp-regional-authorization-tenant-consolidation.md
+  - name: Associate Learn/skills to Partner Center account
+    href: ms-learn-associate.md
+  - name: Link a PartnerID with PAL or DPOR
+    href: link-partner-id-for-azure-performance-pal-dpor.md
+  - name: Partner Membership Center retirement
+    href: partner-membership-center-retirement-faq.md
+
+- name: Benefits
+  items:
+  - name: Benefits overview
+    href: manage-your-partner-network-benefits.md
+  - name: Benefits policy and usage
+    href: benefits-faq-new.yml
+  - name: Available benefits
+    items:
+    - name: Azure benefits
+      href: mpn-benefits-azure-cloud.md
+    - name: Cloud services
+      href: cloud-services.md
+    - name: Software benefits
+      href: mpn-benefits-software.md
+    - name: Visual Studio and GitHub benefits
+      href: mpn-benefits-visual-studio.md
+    - name: Technical Benefits
+      href: mpn-benefits-technical-support.md
+    - name: Technical Presales and Deployment Services
+      href: technical-benefits.md
+    - name: Go-to-market benefits
+      href: mpn-learn-about-go-to-market-benefits.md
+    - name: Demos for partners
+      href: mpn-demos.md
+    - name: Create a logo with Logo Builder
+      href: mpn-logo-builder.md
+  - name: Restricted direct bill access
+    href: restricted-direct-bill-capabilities.md
+
+- name: Referrals
+  items:
+  - name: Referrals overview
+    href: referrals.md
+  - name: New Referrals user experience
+    href: referrals-user-guide.md
+  - name: Grow your business
+    href: grow-your-business.md
+  - name: Manage your business profile
+    href: create-a-marketing-profile.md
+  - name: Referrals partner communications
+    href: referrals-partners-communications.md
+  - name: Manage leads
+    items:
+    - name: About leads
+      href: manage-leads.md
+    - name: Customer insights for leads
+      href: leads-enrichment-insights.md
+    - name: Leads FAQ
+      href: leads-FAQ.yml
+  - name: Manage co-sell opportunities
+    items:
+    - name: About co-sell opportunities
+      href: manage-co-sell-opportunities.md
+    - name: Customer insights for co-sell opportunities
+      href: customer-insights-co-sell-opportunities.md
+    - name: Bulk operations
+      href: bulk-operations.md
+    - name: Bulk upload deal registrations
+      href: bulk-operations-deal-registrations.md     
+    - name: Routing rules
+      href: routing-rules.md
+    - name: Use co-sell CRM connectors
+      items:
+      - name: Connector for Dynamics 365
+        href: connector-dynamics.md
+      - name: Connector for Salesforce
+        href: connector-salesforce.md
+      - name: Troubleshoot connectors
+        href: connectors-troubleshoot.md
+  - name: Manage co-sell solutions
+    items:
+    - name: Introduction to co-sell solutions
+      href: co-sell-overview.md
+    - name: Configure co-sell solution
+      href: co-sell-configure.md
+    - name: Co-sell requirements
+      href: co-sell-requirements.md
+    - name: Verify co-sell status of a solution
+      href: co-sell-status.md
+    - name: Co-sell country, region, state, and province codes
+      href: commercial-marketplace-co-sell-location-codes.md
+    - name: Reference architecture diagram
+      href: reference-architecture-diagram.md
+  - name: Azure IP co-sell top-tier benefits
+    href: azure-ip-co-sell-top-tier-benefits.md
+  - name: Register your deals
+    href: register-deals.md
+  - name: Manage solution assessments
+    href: solution-assessments.md
+  - name: FAQ on referrals
+    href: referrals-faq.md
+
+- name: Customers
+  items:
+  - name: Customers overview
+    href: customers-overview.md
+  - name: Connect with your customers
+    href: connect-with-your-customers.md
+  - name: See your customer list
+    href: see-your-customer-list.md
+  - name: Manage your customers with tags
+    href: manage-customers-with-tags.md
+  - name: View customer activity logs
+    href: activity-logs.md
+  - name: Granular delegated admin privileges (GDAP)
+    items:
+    - name: Introduction to GDAP
+      href: gdap-introduction.md
+    - name: Obtain permissions to manage customer
+      href: gdap-obtain-admin-permissions-to-manage-customer.md
+    - name: Customer approval
+      href: gdap-customer-approval.md
+    - name: Assign Azure AD roles
+      href: gdap-assign-azure-ad-roles.md
+    - name: Least privileged roles by task 
+      href: gdap-least-privileged-roles-by-task.md
+    - name: Bulk migrate DAP to GDAP
+      items:
+      - name: Upgrade DAP relations to GDAP in bulk
+        href: gdap-bulk-migration-tool.md
+      - name: GDAP migration tool FAQ
+        href: gdap-bulk-migration-tool-faq.md
+    - name: Partner terminate
+      href: gdap-partner-terminate.md
+    - name: Customer terminate
+      href: gdap-customer-terminate.md
+    - name: Expiring notifications
+      href: gdap-expiring-notifications.md
+    - name: Activity logs
+      href: gdap-activity-logs.md
+    - name: Frequently asked questions
+      href: gdap-faq.md
+    - name: Migration frequently asked questions
+      href: gdap-migration-faq.md
+    - name: Microsoft-led transition
+      href: gdap-microsoft-led-transition.md
+    - name: Supported workloads 
+      href: gdap-supported-workloads.md
+    - name: APIs DAP-to-GDAP transition
+      href: dap-api-impact.md
+  - name: Work with partners
+    items:
+    - name: Work with other partners
+      href: work-with-other-partners.md
+    - name: Find a partner
+      href: find-a-partner.md
+    - name: List on Partner Finder
+      href: ./create-a-marketing-profile.md
+  - name: Manage your customers
+    items:
+    - name: Add a new customer
+      href: add-a-new-customer.md
+    - name: Validate names and addresses
+      href: validate-names-addresses.md
+    - name: Remove a reseller relationship with a customer
+      href: remove-a-relationship.md
+    - name: Manage a customer's user accounts
+      items:
+      - name: Manage user accounts
+        href: manage-user-accounts.md
+      - name: Update customer account info
+        href: update-customer-account-info.md
+      - name: Add multiple users for a customer
+        href: adding-multiple-users-to-a-customer-account.md
+    - name: Let customers buy their own services
+      href: give-customers-permission.md
+    - name: Indirect provider tasks
+      href: indirect-provider-tasks-in-partner-center.md
+    - name: Request a reseller relationship with a customer
+      href: request-a-relationship-with-a-customer.md
+  - name: Manage customer subscriptions
+    items:
+    - name: Manage customer subscriptions
+      href: create-a-new-subscription.md
+    - name: Understand subscription lifecycle states
+      href: subscription-lifecycle.md
+    - name: Align subscription end dates
+      href: align-subscription-end-dates.md
+    - name: Assign Azure subscriptions in Partner Center
+      href: assign-azure-subscriptions.md
+    - name: Manage a customer's user permissions and licenses
+      items:
+      - name: Manage users and licenses
+        href: assign-licenses-to-users.md
+      - name: Assign or revoke licenses to multiple users
+        href: bulk-license-provisioning-for-multiple-users.md
+    - name: Simplify device setup with Windows Autopilot
+      href: autopilot.md
+    - name: Manage Microsoft Azure reservations on behalf of your customers
+      href: azure-reservations-manage.md
+    - name: Migrate subscriptions to new commerce
+      href: migrate-subscriptions-to-new-commerce.md
+    - name: Migrate subscriptions to new commerce experience in batches (BAM tool)
+      href: migrate-subscriptions-via-batches.md
+    - name: Sell on-premises software through the CSP program
+      href: csp-on-premises-software.md
+    - name: Reinstate admin privileges for Azure CSP subscriptions
+      href: reinstate-csp.md
+    - name: Licensing resources
+      href: support-resources-licensing.md
+    - name: Transfer Azure subscriptions
+      href: switch-azure-subscriptions-to-a-different-partner.md
+    - name: Move license-based services customers to the CSP program
+      href: transition-seat-based-services.md
+    - name: User and license management for Microsoft Cloud Germany
+      href: user-management-in-partner-center-for-microsoft-cloud-germany.md
+    - name: User and license management for Microsoft Cloud for US Government
+      href: user-management-in-partner-center-for-microsoft-us-govt-cloud.md
+    - name: Credit limit enforcement
+      href: credit-limit-enforcement.md
+    - name: Manage end-of-sale offers
+      href: manage-end-of-sale-offers.md
+    - name: Add licenses or services to a subscription
+      href: add-licenses-or-services-to-an-existing-subscription.md
+    - name: Manage subscriptions and resources under the Azure plan
+      href: azure-plan-manage.md
+    - name: Transfer a customer subscription to another partner
+      href: transfer-azure-subscriptions-under-azure-plan.md
+    - name: Upgrade Windows 10 Home to Education
+      href: upgrade-windows-to-education.md
+    - name: Upgrade or transfer offers to newer versions
+      items:
+      - name: Upgrade Dynamics AX subscriptions to Dynamics 365
+        href: manual-subscription-migration.md
+      - name: Migrate Dynamics 365 Business Edition Offers to newer versions
+        href: migrate-dynamics-365-to-new.md
+      - name: Migrate Office 365 Enterprise E4 subscriptions to newer Office 365 versions
+        href: migrate-office365-e4-subscriptions-to-newer-versions.md
+      - name: Migrate Skype for Business Online Plan 1 to newer Office 365 versions
+        href: skype-retiring.md
+  - name: Microsoft Customer Agreements
+    items:
+    - name: Microsoft Customer Agreements
+      href: agreements.md
+    - name: Confirm customer acceptance of the Microsoft Customer Agreement
+      href: confirm-customer-agreement.md
+  - name: CSP offers
+    items:
+    - name: Buy Azure at PAYG rates
+      href: azure-plan-lp.md
+    - name: Begin using PAYG rates with the Azure plan
+      href: azure-plan-get-started.md
+    - name: Purchase the Azure plan
+      href: purchase-azure-plan.md    
+    - name: Sell Azure reservations
+      href: azure-reservations.md
+    - name: Buy Microsoft Azure reservations on behalf of your customers
+      href: azure-reservations-buying.md
+    - name: Save with Azure savings plans
+      href: azure-savings-plan.md
+    - name: Sell Office 365 Government GCC for CSP
+      href: csp-gcc-overview.md
+    - name: Sell subscriptions to your customers
+      href: customer-subscriptions.md
+    - name: Sell Minecraft Education Edition subscriptions
+      href: minecraft-subscriptions.md
+    - name: Offer your customers trials of Microsoft products
+      href: offer-your-customers-trials-of-microsoft-products.md
+    - name: Azure Partner Shared Services
+      href: shared-services.md
+    - name: Software subscriptions
+      href: csp-software-subscriptions.md
+    - name: Sell to specialized industries
+      href: get-special-pricing-for-offers.md
+    - name: Create and sell offers to education customers
+      href: sell-to-education-customers.md
+    - name: New commerce experiences for license-based services
+      href: new-commerce-license-based.md
+      items:
+      - name: New commerce telco payg
+        href: new-commerce-telco-payg.md
+      - name: New commerce add-ons
+        href: new-commerce-add-ons.md
+      - name: New commerce specialized offers
+        href: new-commerce-specialized-offers.md
+      - name: New commerce cancellation policy
+        href: new-commerce-cancellation-policy.md
+    - name: Compare Azure offers
+      href: compare-azure-offers.md
+    - name: Sell partner offers in CSP
+      href: csp-offers.md
+    - name: Available Azure services
+      href: azure-plan-available.md
+    - name: Azure reservations
+      items:
+      - name: VM sizing for maximum reservation usage
+        href: azure-usage.md
+      - name: Azure reserved VM instances (RI) + server subscriptions
+        href: azure-ri-server-subscriptions.md
+  - name: Commercial marketplace
+    items:
+    - name: Introduction to the commercial marketplace
+      href: csp-commercial-marketplace-overview.md
+    - name: Discover marketplace offers
+      href: csp-commercial-marketplace-discover.md
+    - name: Marketplace margins
+      href: csp-commercial-marketplace-margins.md
+    - name: Support for marketplace offers
+      href: csp-commercial-marketplace-support.md
+    - name: Manage marketplace offers
+      href: csp-commercial-marketplace-manage.md
+    - name: Contracts for marketplace purchases
+      href: csp-commercial-marketplace-contracting.md
+    - name: Purchase marketplace offers
+      href: csp-commercial-marketplace-purchase.md
+    - name: Sell subscriptions to commercial marketplace products
+      href: sell-marketplace-products.md
+  - name: Advisors selling Office 365
+    items:
+    - name: Create an Office 365 trial invitation
+      href: advisors-create-a-trial-invitation.md
+    - name: Add clients with Office 365 trial offers
+      href: advisors-build-your-business.md
+    - name: Create an Office 365 purchase offer
+      href: advisor-create-a-purchase-offer.md
+  - name: Support your customers
+    items:
+    - name: Provide technical support to your customers
+      href: customer-support.md
+    - name: Assign a technical support contact
+      href: assign-support-contacts.md
+    - name: Obtain permissions to a customer's service or subscription
+      href: customers-revoke-admin-privileges.md
+    - name: Check service health
+      href: check-service-health.md
+    - name: Report customer issues
+      href: report-problems-on-behalf-of-a-customer.md
+    - name: Escalate to Microsoft
+      href: escalating-to-microsoft.md
+    - name: Multichannel support
+      href: multichannel.md
+    - name: Multi-partner support
+      href: multipartner.md
+
+- name: Billing
+  items:
+  - name: Billing overview
+    href: billing.md
+  - name: Billing basics
+    href: billing-basics.md
+  - name: Understand your invoices
+    href: understand-your-invoice.md
+  - name: Understand your reconciliation files
+    href: read-your-bill.md
+  - name: How to use your reconciliation files
+    href: use-the-reconciliation-files.md
+    items:
+    - name: Legacy license-based reconciliation file
+      href: license-based-recon-files.md
+    - name: Legacy usage-based reconciliation file
+      href: usage-based-recon-files.md
+    - name: New Commerce invoice reconciliation file
+      href: modern-invoice-reconciliation-file.md
+    - name: New Commerce daily rated usage reconciliation file
+      href: daily-rated-usage-recon-files.md
+    - name: Azure credit offer balance file
+      href: azure-credit-offer-balance.md
+    - name: Reconciliation file charge types
+      href: recon-file-charge-types.md
+  - name: Azure spending budget
+    href: set-an-azure-spending-budget-for-your-customers.md
+  - name: Legacy common billing scenarios
+    href: common-billing-scenarios.md
+    items:
+    - name: Scenarios for monthly billing
+      href: common-billing-scenarios-monthly.md
+    - name: Common billing scenarios with annual payments
+      href: common-billing-scenarios-annual.md
+  - name: Billing frequency changes
+    href: billing-frequency-changes.md
+  - name: New Commerce billing scenarios
+    items:
+    - name: New Commerce billing concept and common license-based billing scenarios
+      href: common-billing-scenarios-onetime-recurring.md
+    - name: New Commerce experience in CSP - usage-based billing
+      href: azure-plan-billing.md
+    - name: Azure savings plan billing
+      href: azure-savings.md
+    - name: Marketplace offers billing
+      href: csp-commercial-marketplace-billing.md
+    - name: SaaS subscriptions
+      href: common-billing-scenarios-saas.md
+  - name: Provide billing support
+    href: provide-billing-support.md
+  - name: Partner earned credit
+    items:
+      - name: Introduction to partner earned credit
+        href: partner-earned-credit.md
+      - name: How the partner earned credit is calculated and paid
+        href: partner-earned-credit-explanation.md
+      - name: Roles and permissions for partner earned credit
+        href: azure-roles-perms-pec.md
+      - name: FAQ for partner earned credit
+        href: partner-earned-credit-faq.md
+      - name: Troubleshooting partner earned credit
+        href: partner-earned-credit-troubleshoot.md
+  - name: Understand taxes and credits
+    href: organization-tax-info.md
+    items:
+    - name: Tax exemptions by country or region
+      href: tax-and-tax-exemptions.md
+    - name: Regional taxes for voice services
+      href: tax-and-fees-voice-services.md
+    - name: Request credit from Microsoft
+      href: request-credit.md
+    - name: Submit withholding tax
+      href: withholding-tax-credit-form.md
+
+- name: Pricing
+  items:
+  - name: Pricing overview
+    href: pricing-and-offers.md
+  - name: Software pricing
+    href: software-pricing.md
+  - name: CSP offers
+    items:
+    - name: Azure plan
+      items:
+      - name: Transition your customers to the Azure plan
+        href: azure-plan-transition.md
+      - name: Price list for the new commerce experience in CSP for Azure
+        href: azure-plan-price-list.md
+    - name: New commerce promotions
+      href: new-commerce-promotions.md
+    - name: Software promotions
+      href: software-promotions.md
+    - name: Use promotions to attract new customers
+      href: promotions.md
+
+- name: Incentives
+  items:
+  - name: Incentives overview
+    href: incentives-get-started-intro.md
+  - name: Get started with incentives
+    items:
+    - name: FAQ on incentives
+      href: incentives-faq.yml
+    - name: The 10 essentials for incentives
+      href: incentives-ten-essentials.md
+    - name: Enroll in incentives
+      href: incentives-enroll.md
+    - name: Check program eligibility
+      href: incentives-determined-your-program-eligibility.md
+    - name: Understand incentives payout and tax profiles
+      href: incentives-create-and-manage-your-payout-and-tax-profiles.md
+    - name: Check earnings eligibility
+      href: incentives-confirm-your-earnings-eligibility.md
+    - name: View programs and payments
+      href: understand-incentive-payouts.md
+  - name: MCI engagements
+    items:
+    - name: MCI engagements eligibility
+      href: mci-engagements.md
+    - name: Customers page for MCI engagements
+      href: mci-engagements-customers.md
+    - name: Submit an MCI engagement claim
+      href: mci-engagements-workshop.md
+  - name: Plans and proofs of execution
+    items:
+    - name: Understand plans and PoE
+      href: incentives-plans-proofs-intro.md
+    - name: Create your plan
+      href: incentives-create-your-plan.md
+    - name: Create your proof of execution
+      href: incentives-prepare-your-proof-of-execution.md
+  - name: Incentives co-op claims
+    items:
+    - name: Incentive co-op claims
+      href: claims-overview.md
+    - name: View available co-op funds
+      href: incentives-view-funds.md
+    - name: Co-op earning threshold
+      href: claims-threshold.md
+    - name: Manage co-op claims
+      href: create-incentives-claims.md
+    - name: View core requirements
+      href: core-requirements.md
+    - name: Co-op claims approval and deadlines
+      href: incentives-managing-co-op-claims.md
+    - name: Rejected claims
+      href: reject-claims.md
+  - name: Incentives CPOR association claims
+    items:
+    - name: Understand CPOR associations
+      href: incentives-customer-associations-intro.md
+    - name: Create a customer association
+      href: submit-osa-claim.md
+    - name: Manage customer associations
+      href: incentives-manage-customer-associations.md
+    - name: Customer association issues
+      href: incentives-customer-association-issues.md
+  - name: Work in Channel Incentives Platform (CHIP)
+    items:
+    - name: Introduction to CHIP
+      href: chip-intro.md
+    - name: Add users to your CHIP account
+      href: chip-users.md
+    - name: View earnings in CHIP
+      href: chip-earnings.md
+    - name: Check payment status in CHIP
+      href: chip-payment-status.md
+    - name: Locate the desktop count and fee level for an agreement
+      href: chip-locate-agreement.md
+    - name: Solution Assessment
+      href: chip-solution-assessment.md
+    - name: Solution Assessment eligibility
+      href: chip-solutions-assessment-eligible.md
+    - name: Solution Assessment payment status
+      href: chip-solution-assessment-payment.md
+    - name: Solution Assessment FAQ
+      href: chip-faq.yml
+    - name: Troubleshoot CHIP access
+      href: chip-access-trouble.md
+    - name: CHIP permissions with Azure AD 
+      href: chip-check-access.md
+  - name: Troubleshoot payments and earnings
+    href: incentives-payment-issues.md
+
+- name: Marketplace offers
+  href: marketplace/TOC.yml
+
+- name: Earnings
+  items:
+  - name: Earnings overview
+    href: earnings-overview.md
+  - name: Earnings
+    href: earnings.md
+  - name: Revenue
+    href: earnings-revenue.md
+  - name: Reports
+    items:
+    - name: Reports overview
+      href: earnings-reports.md
+    - name: Default
+      href: earnings-default.md
+    - name: Growth
+      href: earnings-growth.md
+    - name: Ineligible revenue usage
+      href: earnings-ineligible-revenue-usage.md
+    - name: Marketplace
+      href: earnings-marketplace.md
+    - name: MaxCapBalance
+      href: earnings-max-cap-balance.md
+    - name: Payments
+      href: earnings-payments.md
+    - name: Store
+      href: earnings-store.md
+  - name: Frequently asked questions
+    items:
+    - name: Troubleshoot your earnings
+      href: troubleshoot-earnings-faq.yml
+    - name: Troubleshoot your payments
+      href: troubleshoot-payments-faq.yml
+
+- name: Payouts
+  items:
+  - name: Payouts overview
+    href: payouts-overview.md
+  - name: See your payments
+    href: payments.md
+  - name: Transaction history
+    href: transaction-history.md
+  - name: Revenue summary
+    href: revenue-summary.md
+  - name: Payouts export data page
+    href: payouts-enhanced-exports.md
+  - name: Payouts and tax profile FAQ
+    href: payout-faq.yml
+  - name: Reconciliation FAQs
+    href: reconciliation-faq.md
+  - name: Payout policies for commercial marketplace
+    items:
+    - name: Mobile operator billing
+      href: mobile-operator-billing.md
+    - name: Payout details by region
+      href: payment-thresholds-methods-timeframes.md
+    - name: Payout schedules and processes
+      href: payout-policy-details.md
+    - name: Set up commercial marketplace payout and tax profiles
+      href: set-up-your-payout-account.md
+    - name: Tax details for Microsoft commercial marketplace
+      href: tax-details-marketplace.md
+    - name: How tax policies affect payout for Azure Marketplace
+      href: tax-policies-affect-payout.md
+    - name: Understand IRS tax forms issued by Microsoft
+      href: understand-irs-tax-forms.md
+    - name: Get paid through marketplace offers
+      href: marketplace-get-paid.md
+
+- name: Insights
+  items:
+  - name: Insights overview
+    href: insights-overview.md
+  - name: Downloads hub
+    items:
+    - name: Downloads hub overview
+      href: downloads-hub-overview.md
+    - name: Cloud product performance
+      href: downloads-hub.md
+    - name: Apps and games
+      href: apps-games-download-reports.md
+  - name: Cloud product performance insights
+    items:
+    - name: How to use insights
+      href: partner-center-insights.md
+    - name: CPP role-based access
+      href: insights-roles.md
+    - name: Cloud product performance report details
+      items:
+      - name: CPP summary
+        href: insights-overview-report.md
+      - name: Customer
+        href: insights-customer-report.md
+      - name: Reseller performance
+        href: insights-resellers-performance.md
+      - name: Product subscriptions
+        href: insights-product-subscriptions-report.md
+      - name: Azure usage
+        href: insights-azure-usage-report.md
+      - name: Teams usage
+        href: insights-teams-usage-report.md
+      - name: Office 365 usage
+        href: insights-office-365-usage-report.md
+      - name: Dynamics usage
+        href: insights-dynamics-usage-report.md
+      - name: Enterprise Mobility + Security usage
+        href: insights-enterprise-mobility-security-usage-report.md
+      - name: Power BI usage
+        href: insights-power-bi-usage-report.md
+      - name: CloudAscent propensity
+        href: insights-customer-opportunities.md
+      - name: Product licenses
+        href: insights-product-licenses-report.md
+      - name: Sales Advisor
+        items:
+        - name: Sales Advisor overview
+          href: sales-advisor-overview.md
+        - name: Sales Advisor opportunities and data
+          href: sales-advisor-opportunities.md
+        - name: Sales Advisor navigation
+          href: sales-advisor-navigation.md
+        - name: Sales Advisor troubleshooting
+          href: sales-advisor-troubleshoot.md
+      - name: FastTrack
+        href: insights-fasttrack-user-experience.md
+    - name: Cloud product performance insights FAQ
+      href: insights-known-issues.md
+    - name: Programmatic access to insights
+      items:
+      - name: Get started
+        href: insights-programmatic-get-started.md
+      - name: Prerequisites for programmatic access
+        href: insights-programmatic-prerequisites.md
+      - name: Programmatic access paradigm
+        href: insights-programmatic-access-paradigm.md
+      - name: Make your first programmatic API call
+        href: insights-programmatic-first-api-call.md
+      - name: List of system queries
+        href: insights-programmatic-system-queries.md
+      - name: Sample queries
+        href: insights-programmatic-sample-queries.md
+      - name: Custom query specification
+        href: insights-programmatic-custom-query.md
+      - name: Sample application
+        href: insights-programmatic-sample-application.md
+      - name: Frequently asked questions
+        href: insights-programmatic-faq.md
+      - name: API references
+        items:
+        - name: Available APIs
+          href: insights-programmatic-analytics-available-api.md
+        - name: Get all datasets
+          href: insights-programmatic-analytics-api-get-dataset.md
+        - name: Get report queries
+          href: insights-programmatic-analytics-api-get-report-queries.md
+        - name: Delete report queries
+          href: insights-programmatic-analytics-api-delete-report-queries.md
+        - name: Try report queries
+          href: insights-programmatic-analytics-api-try-report-queries.md
+        - name: Get report
+          href: insights-programmatic-analytics-api-get-report.md
+        - name: Update report
+          href: insights-programmatic-analytics-api-update-report.md
+        - name: Delete report
+          href: insights-programmatic-analytics-api-delete-report.md
+        - name: Pause report executions
+          href: insights-programmatic-analytics-api-pause-report-executions.md
+        - name: Resume report executions
+          href: insights-programmatic-analytics-api-resume-report-executions.md   
+    - name: Partner insights reports and data definitions
+      href: insights-data-definitions.md
+    - name: Partner insights reports and data refresh frequency
+      href: insights-data-frequency.md 
+    - name: How to use Azure usage report
+      href: azure-usage-report.md 
+  - name: Membership insights 
+    items:
+    - name: Training
+      href: insights-training-dashboard.md
+    - name: Microsoft Learn analytics
+      href: ms-learn-analytics.md
+    - name: Benefits
+      href: insights-benefits-report.md
+    - name: Solutions Partners
+      items:
+      - name: Solutions Partner insights
+        href: solutions-partner-insights.md
+      - name: Customer eligibility
+        href: customer-eligibility.md
+      - name: Score simulator
+        href: score-simulator.md
+  - name: Referrals insights
+    items:
+    - name: Referral insights summary
+      href: referral-insights-summary.md
+    - name: Get leads insights
+      href: referral-leads-insights.md
+    - name: Get co-sell insights
+      href: referral-cosell-insights.md 
+    - name: Partner cohort analysis
+      href: referral-cohort-analysis.md 
+    - name: Referral analytics data definition
+      href: referral-analytics-data-definition.md    
+  - name: Cloud Solution Provider insights
+    items:
+    - name: GDAP relationship analytics 
+      href: gdap-relationship-analytics.md
+    - name: Customer Azure usage
+      href: analyze-azure-usage.md
+    - name: Indirect reseller performance
+      href: analyze-indirect-resellers.md
+    - name: Subscriptions and licenses
+      href: analyze-subscriptions-licenses.md
+    - name: Migrate Kaizala Pro subscriptions to Microsoft 365
+      href: migrate-kaizala-pro-partner.md
+    - name: Increase adoption and satisfaction
+      href: increasing-adoption-and-satisfaction.md
+  - name: Marketplace insights
+    items:
+    - name: Commercial marketplace insights 
+      href: analytics.md
+    - name: Summary dashboard
+      href: summary-dashboard.md
+    - name: Revenue dashboard
+      href: revenue-dashboard.md  
+    - name: Orders dashboard
+      href: orders-dashboard.md
+    - name: Usage dashboard
+      items: 
+      - name: Usage dashboard overview
+        href: usage-dashboard.md
+      - name: Virtual Machine usage
+        href: usage-vm-dashboard.md
+      - name: Containers raw usage
+        href: usage-containers-dashboard.md
+      - name: Metered usage
+        href: usage-metered-dashboard.md
+      - name: Manage metered billing anomalies
+        href: anomaly-detection.md
+    - name: Customers dashboard
+      href: customer-dashboard.md
+    - name: Marketplace Insights dashboard
+      href: insights-dashboard.md
+    - name: License dashboard
+      href: license-dashboard.md
+    - name: Quality of service dashboard
+      href: quality-of-service-dashboard.md
+    - name: Downloads dashboard
+      href: downloads-dashboard.md
+    - name: Ratings and reviews dashboard
+      href: ratings-reviews.md
+    - name: Customer retention dashboard
+      href: customer-retention-dashboard.md
+    - name: Analyze your Office store app
+      items:
+      - name: Analyze performance
+        href: view-acquisitions-report.md
+      - name: Analyze usage
+        href: view-usage-report.md
+      - name: Teams apps usage report
+        href: teams-apps-usage.md
+      - name: Ratings and reviews
+        href: ratings-reviews.md
+    - name: Programmatic access to Marketplace insights
+      items:
+      - name: Get started
+        href: analytics-get-started.md
+      - name: Prerequisites for programmatic access
+        href: analytics-prerequisites.md
+      - name: Programmatic access paradigm
+        href: analytics-programmatic-access.md
+      - name: Make your first API call for Marketplace insights
+        href: analytics-make-your-first-api-call.md
+      - name: List of system queries for Marketplace insights
+        href: analytics-system-queries.md
+      - name: Sample queries for Marketplace insights
+        href: analytics-sample-queries.md
+      - name: Sample application for Marketplace insights
+        href: analytics-sample-application.md
+      - name: Frequently asked questions
+        href: analytics-programmatic-faq.md
+      - name: Custom query specification
+        href: analytics-custom-query-specification.md
+      - name: Analytics APIs
+        items:
+        - name: Available APIs
+          href: analytics-available-apis.md
+        - name: Get all datasets
+          href: analytics-api-get-all-datasets.md
+        - name: Get report queries
+          href: analytics-api-get-report-queries.md
+        - name: Delete report queries
+          href: analytics-api-delete-report-queries.md
+        - name: Try report queries
+          href: analytics-api-try-report-queries.md
+        - name: Get report
+          href: analytics-api-get-report.md
+        - name: Update report
+          href: analytics-api-update-report.md
+        - name: Delete report
+          href: analytics-api-delete-report.md
+        - name: Pause report executions
+          href: analytics-api-pause-report-executions.md
+        - name: Resume report executions
+          href: analytics-api-resume-report-executions.md
+    - name: Analytics FAQ
+      href: analytics-faq.yml
+  - name: Surface insights
+    items:
+    - name: Surface insights summary
+      href: surface-insights-summary.md
+  - name: Security
+    items:
+    - name: Security alerts dashboard
+      href: security-alerts-dashboard.md    
+- name: "Help + support"
+  items:
+  - name: Help + support overview
+    href: support-from-microsoft.md
+  - name: Get help and contact support
+    href: report-problems-with-partner-center.md
+  - name: Schedule an appointment with support
+    href: schedule-support-appointment.md
+  - name: Partner Support availability
+    href: support-hours.md
+  - name: Collect and send diagnostics to Microsoft
+    href: send-diagnostics.md
+  - name: Which support portal should I use?
+    href: support-resource-options.md
+
+- name: Developer resources
+  href: developer/TOC.yml

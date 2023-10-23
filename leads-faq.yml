@@ -1,0 +1,124 @@
+### YamlMime:FAQ
+metadata:
+  title: Leads FAQ
+  description: This article answers frequently asked questions about the leads that you receive from your customers at Partner Center and informs about how to act on them.
+  author: vikrambmsft
+  ms.author: vikramb
+  ms.service: partner-dashboard
+  ms.topic: faq
+  ms.date: 11/08/2022
+
+title: Leads FAQ
+summary: |
+  **Appropriate roles**: Business profile admin | Referrals admin
+
+sections:
+    - name: First section
+      questions:
+      - question: |
+            Must I configure a lead destination endpoint to receive leads in Partner Center?
+        answer: |
+            No. Leads for offers published through commercial marketplace are delivered to Partner Center irrespective of whether a lead destination end point is configured.
+
+      - question: |
+          What happens to the existing lead destination configuration? Do we need to take any action?
+        answer: |
+            Leads for offers are delivered to both the lead destination endpoints and to  Partner Center. No action is required from your company. If you're using *Azure table storage* or *https endpoint*, we recommend that you start using Partner Center to get the leads. You can also use Excel to download leads in Partner Center.
+
+      - question: |
+          How can I differentiate between marketplace leads generated for by business profiles and commercial marketplace offers?
+        answer: |
+           You can use the *Offer type* filter to view business profile leads (*Profile leads* option) or commercial marketplace offer (*Offer leads* option).
+
+      - question: |
+          Our company moved offers from the Microsoft One Commercial Partner Go to Market (OCP GTM) portal to the commercial marketplace program. Will we receive leads for our offers?
+        answer: |
+          Yes. As long as an offer is listed on the Microsoft marketplace (AppSource, Azure Marketplace, Azure portal marketplace), leads are delivered to Partner Center.
+
+      - question: |
+          Will we receive additional information, such as a lead quality score, in the existing lead configuration endpoints?
+        answer: |
+          No. All the other data is available only through the Partner Center interfaces and not the existing lead destination endpoints.
+
+      - question: |
+          There aren't any leads with the Free trial call-to-action. Is there a problem with my Partner Center account?
+        answer: |
+           Because the same action code (*"INS"*) is used for both *Get it now* and *Free trial* calls-to-action, they aren't differentiated. This code wasn't changed to ensure that partners who configured their CRM endpoints aren't affected. *Free trial* and *Get it now* actions will be differentiated in a future release.
+
+      - question: |
+          We're a high volume leads partner. Are there any other alternatives to using the Partner Center?
+        answer: |
+           Yes. Marketplace leads information is available from the Partner Center as a .CSV file export, and through the Partner Center APIs. This capability will be added to the [bi-directional Power Automate connectors](connector-dynamics.md) in the future.
+
+      - question: |
+          What role do I need to view leads in Partner Center?
+        answer: |
+          You need the *[Referrals admin](./permissions-overview.md)* role at global scope to view leads in Partner Center. You can ask your Account admin in Partner Center to give you that role.
+
+          To find your company's account admin:
+
+          1. Sign in to [Partner Center](https://partner.microsoft.com/dashboard/home) and select the **Settings** (gear) icon.
+          2. Select **User management** on the left navigation panel.
+          3. Select **Filter** next to the search box in the **User management** page.
+          4. Select **Account admin** from the filter list.
+
+          You can contact any of the Account admins displayed in the list to request the Referral admin role.
+
+      - question: |
+          Why am I not getting lead notification email?
+        answer: |
+          Ensure that you're a *Referral admin* in Partner center.
+
+          Check if your offer is published and live on AppSource, Azure portal, or Azure Marketplace. (Preview offer links don't generate leads.)
+
+          Sign in to [Partner Center](https://partner.microsoft.com/dashboard/home) and select **Referrals** to see if any leads are displayed.
+
+      - question: |
+          How do I unsubscribe from lead notification email?
+
+        answer: |
+           You can't unsubscribe from lead notification email because it has important information about your customers. However, you can configure rules in your email inbox to send to notifications to a separate folder. For more information, see [Manage email messages by using rules](https://support.microsoft.com/office/manage-email-messages-by-using-rules-c24f5dea-9465-4df4-ad17-a50704d66c59).
+
+      - question: |
+          I can't access the Marketplace leads tab. What should I do?
+
+        answer: |
+          Verify that you're a Referral admin.
+
+          Verify that you're enrolled in the Microsoft AI Cloud Partner Program and have access to the **Referrals** workspace in Partner Center. (To get access to Partner Center, contact your Global admin.)
+
+      - question: |
+          I see an empty Marketplace leads tab. What do I do now?
+
+        answer: |
+          Check if you have any offers published live in the marketplace (at AppSource, Azure Marketplace, or Azure portal).
+
+          Generate a test lead. (See the following question and image.) If you can successfully generate a test lead but still have an empty **Marketplace leads** tab, contact support.
+
+      - question: |
+          How do I send a test lead to my CRM system?
+
+        answer: |
+          After your offer is published, select the **Validate** button as shown in the image.
+
+          :::image type="content" source="media/leads-faq/send-test-lead.png" alt-text="Screenshot of validating an offer by sending a test email with the Validate button highlighted.":::
+
+      - question: |
+          I have a CRM system. How do I configure leads to be delivered there?
+
+        answer: |
+          Leads can be delivered to several CRM systems, including Dynamics 365 Customer Engagement and Salesforce CRM. For more information, see [Configure lead management for Dynamics 365 Customer Engagement](/azure/marketplace/partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics).
+
+      - question: |
+          I stopped receiving leads at my Partner Center instance. What should I do?
+
+        answer: |
+          - Make sure that your offer is live in the marketplace. (Preview offer links don't generate leads.)
+
+          - Generate a test lead and ensure that the lead destination is configured correctly.
+
+additionalContent: |
+
+  ## See also
+
+  - [About leads](manage-leads.md)

@@ -1,0 +1,74 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": ["breadcrumb/toc.yml"]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.gif",
+          "**/*.svg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "uhfHeaderId": "MSDocsHeader-Partner-Center",
+      "breadcrumb_path": "/partner-center/breadcrumb/toc.json",
+      "extendBreadcrumb": true,
+      "ms.service": "partner-dashboard",
+      "manager": "jasonh",
+      "recommendations": true,
+      "searchScope": [ "Partner Center" ],
+      "_op_documentIdPathDepotMapping": {
+        "./": {
+          "depot_name": "MSDN.partner-center",
+          "folder_relative_path_in_docset": "./"
+        }
+      }
+    },
+    "fileMetadata": {
+      "titleSuffix": {
+        "marketplace/*.md": "Marketplace publisher",
+        "marketplace/*.yml": "Marketplace publisher",
+        "announcements/*.md": "Partner Center announcements",
+        "developer/*.md": "Partner app developer",
+        "developer/*.yml": "Partner app developer",
+        "*.md": "Partner Center",
+        "*.yml": "Partner Center"
+      },
+      "recommendations": {
+       "announcements/*.md": false
+      },
+      "author": {
+        "developer/*.md": "JulCsc"
+      }
+    },
+    "template": [],
+    "dest": "partner-center",
+    "markdownEngineName": "markdig"
+  }
+}

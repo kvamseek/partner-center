@@ -1,0 +1,253 @@
+### YamlMime:Hub
+
+title: Partner Center documentation
+summary: Partner Center makes it easier for Microsoft partners to manage their relationship with Microsoft and their customers.
+
+metadata:
+  title: Partner Center documentation
+  description: Learn how to use Partner Center to manage your relationship and business with Microsoft.
+  ms.service: partner-dashboard
+  ms.author: juliacawthra
+  author: JulCsc
+  ms.topic: hub-page
+  ms.date: 03/07/2022
+  ms.custom: intro-landing-hub
+
+# highlightedContent section (optional)
+# Maximum of 8 items
+highlightedContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+  items:
+    # Card
+    - title: Partner Center
+      itemType: get-started
+      url: overview.md
+    # Card
+    - title: Microsoft AI Cloud Partner Program
+      itemType: get-started
+      url: mpn-create-a-partner-center-account.md
+    # Card
+    - title: Cloud Solution Provider
+      itemType: get-started
+      url: enrolling-in-the-csp-program.md
+    # Card
+    - title: Commercial Marketplace
+      itemType: get-started
+      url: marketplace/index.yml
+    - title: Partner Center APIs
+      itemType: get-started
+      url: developer/index.yml
+    - title: Partner Center announcements
+      itemType: whats-new
+      url: ./announcements/index.md
+
+# conceptualContent section (optional)
+conceptualContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+  items:
+    # Card
+    - title: Enroll
+      links:
+        - url: mpn-create-a-partner-center-account.md
+          itemType: overview
+          text: Microsoft AI Cloud Partner Program
+        - url: csp-overview.md
+          itemType: how-to-guide
+          text: Cloud Solution Provider (CSP) requirements
+        - url: enrolling-in-the-csp-program.md
+          itemType: how-to-guide
+          text: Indirect or direct CSP
+      # footerLink (optional)
+      footerLink:
+        url: enrolling-in-the-csp-program.md
+        text: See more
+    # Card
+    - title: Membership
+      links:
+        - url: mpn-overview.md
+          itemType: overview
+          text: Overview
+        - url: mpn-create-a-partner-center-account.md
+          itemType: how-to-guide
+          text: Create a Microsoft AI Cloud Partner Program account
+        - url: introduction-to-pcs.md
+          itemType: get-started
+          text: Solutions partner
+      # footerLink (optional)
+      footerLink:
+        url: mpn-benefits-map-competency-learning-option-enroll.md
+        text: See more
+    # Card
+    - title: Benefits
+      links:
+        - url: manage-your-partner-network-benefits.md
+          itemType: overview
+          text: Overview
+        - url: benefits-faq.yml
+          itemType: concept
+          text: Benefits FAQ
+        - url: mpn-find-benefits.md
+          itemType: how-to-guide
+          text: Find benefits
+      # footerLink (optional)
+      footerLink:
+        url: renew-mpn-offers.md
+        text: See more
+    # Card
+    - title: Referrals
+      links:
+        - url: referrals.md
+          itemType: overview
+          text: Overview
+        - url: grow-your-business.md
+          itemType: how-to-guide
+          text: Get leads
+        - url: manage-leads.md
+          itemType: how-to-guide
+          text: Manage leads
+      # footerLink (optional)
+      footerLink:
+        url: register-deals.md
+        text: See more
+    # Card
+    - title: Customers
+      links:
+        - url: customers-overview.md
+          itemType: overview
+          text: Overview
+        - url: gdap-introduction.md
+          itemType: how-to-guide
+          text: Granular delegated admin privileges (GDAP)
+        - url: see-your-customer-list.md
+          itemType: how-to-guide
+          text: See your customer list
+      # footerLink (optional)
+      footerLink:
+        url: request-a-relationship-with-a-customer.md
+        text: See more
+    # Card
+    - title: Billing
+      links:
+        - url: billing.md
+          itemType: overview
+          text: Overview
+        - url: read-your-bill.md
+          itemType: concept
+          text: Understand your bill
+        - url: use-the-reconciliation-files.md
+          itemType: tutorial
+          text: Use recon files
+      # footerLink (optional)
+      footerLink:
+        url: billing.md
+        text: See more
+    # Card
+    - title: Pricing
+      links:
+        - url: pricing-and-offers.md
+          itemType: overview
+          text: Overview
+        - url: partner-earned-credit.md
+          itemType: concept
+          text: Partner-earned credit
+        - url: promotions.md
+          itemType: how-to-guide
+          text: Use promotions
+      # footerLink (optional)
+      footerLink:
+        url: csp-commercial-marketplace-overview.md
+        text: See more
+    # Card
+    - title: Incentives
+      links:
+        - url: incentives-get-started-intro.md
+          itemType: overview
+          text: Overview
+        - url: incentives-enroll.md
+          itemType: get-started
+          text: Enroll in incentives
+        - url: mci-engagements.md
+          itemType: concept
+          text: MCI engagements
+      # footerLink (optional)
+      footerLink:
+        url: incentives-determined-your-program-eligibility.md
+        text: See more
+    # Card
+    - title: Marketplace offers
+      links:
+        - url: /azure/marketplace/overview
+          itemType: concept
+          text: Overview of the commercial marketplace
+        - url: /azure/marketplace/publisher-guide-by-offer-type
+          itemType: how-to-guide
+          text: Offer publishing guide
+        - url: /azure/marketplace/policies-terms
+          itemType: concept
+          text: Policies and terms
+      # footerLink (optional)
+      footerLink:
+        url: /azure/marketplace/determine-your-listing-type
+        text: See more
+    # Card
+    - title: Earnings
+      links:
+        - url: earnings-overview.md
+          itemType: overview
+          text: Overview
+        - url: earnings.md
+          itemType: concept
+          text: Understanding earnings and payments
+        - url: troubleshoot-earnings-faq.yml
+          itemType: concept
+          text: Earnings and Payments FAQ
+      # footerLink (optional)
+      footerLink:
+        url: earnings.md#common-tasks-using-the-earnings-page
+        text: See more
+    # Card
+    - title: Insights
+      links:
+        - url: insights-overview.md
+          itemType: get-started
+          text: Overview
+        - url: insights-overview-report.md
+          itemType: concept
+          text: Available reports
+        - url: insights-roles.md
+          itemType: concept
+          text: Grant access to reports
+      # footerLink (optional)
+      footerLink:
+        url: insights-known-issues.md
+        text: See more
+    # Card
+    - title: Accounts
+      links:
+        - url: partner-center-account-setup.md
+          itemType: overview
+          text: Overview
+        - url: manage-locations.md
+          itemType: how-to-guide
+          text: Manage locations
+        - url: create-user-accounts-and-set-permissions.md
+          itemType: how-to-guide
+          text: Create user accounts
+      # footerLink (optional)
+      footerLink:
+        url: ./find-workspaces-roles-admins.md
+        text: See more
+
+# Card with summary style
+additionalContent:
+  # Supports up to 3 sections
+  sections:
+    - title: More information # < 60 chars (optional)
+      items:
+        # Card
+        - title: Microsoft AppSource
+          summary: Learn more about Microsoft AppSource.
+          url: /marketplace/appsource-overview
+        - title: Azure Marketplace
+          summary: Learn more about the Azure Marketplace.
+          url: /marketplace/azure-marketplace-overview

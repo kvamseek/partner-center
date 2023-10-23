@@ -1,0 +1,91 @@
+---
+title: Get foreign exchange rates
+description: Obtain foreign exchange rates for a given month.
+ms.date: 01/24/2020
+ms.service: partner-dashboard
+ms.subservice: partnercenter-api
+ms.topic: article
+author: denysseD
+ms.author: denyssediaz 
+---
+
+# Get foreign exchange rates
+
+This article explains how to get foreign exchange rates for a given month.
+
+## Prerequisites
+
+- Credentials as described in [API authentication](partner-center-authentication.md). This scenario only supports application user authentication. Application-only isn't yet supported.
+- This API currently supports only user access where partners must be in one of the following roles: Global Admin, Admin Agent or Sales Agent.
+
+## Details
+
+- Currently used with [get price sheet API](get-a-price-sheet.md) to calculate expected charges for Azure plan CSP local currencies.
+- Foreign exchange rates hold true for the entire month they're posted.
+- More information about Azure plan pricing can be found in the [Azure plan pricing documentation](../azure-plan-price-list.md).
+- This method returns results as a file stream. File stream is either a .csv file or a zip compressed version of the .csv. Details about how to request compressed files are included below.
+
+## REST request
+
+### Request syntax
+
+| Method   | Request URI                                                                                                 |
+|----------|-------------------------------------------------------------------------------------------------------------|
+| **GET** | `https://api.partner.microsoft.com/v1.0/sales/fxrates(Month='{month}')/$value`                               |
+
+### URI required parameters
+
+Use the following path parameters to request the month of foreign exchange rates you want.
+
+| Name                   | Type     | Required | Description                                                     |
+|------------------------|----------|----------|-----------------------------------------------------------------|
+|Month                   | string   | Yes       | Must be in YYYYMM format. If omitted defaults to current month.       |
+
+### Request headers
+
+- See [Partner REST headers](headers.md) for more information.
+
+In addition to the above headers, files can be retrieved as compressed reducing bandwidth and download times. By default the files aren't compressed. To get compressed versions of the files you can include the below header value. Realize that compressed sheets are only available from April 2020 onward, all requests prior to April 2020 are only available as not compressed.
+
+| Header                   | Value Type     | Value | Description                                                     |
+|------------------------|----------|----------|-----------------------------------------------------------------|
+|Accept-Encoding| string   | deflate| Optional. If omitted file stream isn't compressed.       |
+
+### Request example
+
+```http
+GET https://api.partner.microsoft.com/v1.0/sales/fxrates(Month='201909')/$value HTTP/1.1
+Authorization: Bearer
+Accept-Encoding: deflate
+Host: api.partner.microsoft.com
+
+```
+
+## REST response
+
+If successful, this method returns foreign exchange rates as a file stream. File stream is either a .csv file or a zip compressed version of the .csv.
+
+### Response success and error codes
+
+Each response comes with an HTTP status code that indicates success or failure and additional debugging information. Use a network trace tool to read this code, error type, and additional parameters. For the full list, see [Error Codes](error-codes.md).
+
+### Response example
+
+``` http
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Length: 18548
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename=fxrates
+Request-ID: 65fb6e59-051b-42f7-8771-c8c139b3c901
+Date: Wed, 02 Oct 2019 03:42:54 GMT
+
+"CurrencyCode","USDPerUnit","Month"
+"AED","0.27224589249009701","2019”
+======= Truncated ==============
+
+```
+
+## Next steps
+
+- [Get a price sheet](get-a-price-sheet.md)

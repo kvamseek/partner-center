@@ -1,0 +1,15 @@
+- name: Partner Center Docs
+  tocHref: /partner-center/
+  topicHref: /partner-center/index
+  items:
+  - name: Announcements
+    tocHref: /partner-center/announcements/
+    topicHref: /partner-center/announcements/
+
+- name: Partner Center Docs
+  tocHref: /partner-center/
+  topicHref: /partner-center/index
+  items:
+  - name: Marketplace offers
+    tocHref: /azure/marketplace/
+    topicHref: /azure/marketplace/
